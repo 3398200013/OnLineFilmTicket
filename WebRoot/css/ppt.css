@@ -186,9 +186,9 @@ body {
 .ppt_movie {
 	position: absolute;
 	top: 70px;
-	left: 100px;
+	left: 70px;
 	width: auto;
-	height: 330px;
+	height: 300px;
 }
 
 .ppt_module_1>h1 {
