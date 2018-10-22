@@ -19,8 +19,8 @@
 		          if(msg == 1){
 		             span.innerHTML = " ";
 		          }else{
-		             span.innerHTML = "ä½ è¾“å…¥çš„ç”¨æˆ·åå·²å­˜åœ¨ï¼Œè¯·é‡æ–°è¾“å…¥";
-		             $('.user_hint').html("Ã—").css("color","red");
+		             span.innerHTML = "ÄãÊäÈëµÄÓÃ»§ÃûÒÑ´æÔÚ£¬ÇëÖØĞÂÊäÈë";
+		             $('.user_hint').html("¡Á").css("color","red");
 		             user_Boolean = false;
 		          } 
 				}
@@ -35,19 +35,19 @@
 	<div id="panel">
 		<div class="fromImg">
 			<img src="img/logo.png" />
-			<p id="title">ç”¨æˆ·ç™»å½•</p>
+			<p id="title">ÓÃ»§µÇÂ¼</p>
 		</div>
 		<span id="userspan"></span>
 		<div class="login_regis" id="login_regis">
 			<div class="inputLable">
 				<form action="LoginSvl" id="dlform" method="post">
 					<input type="text" name="uname" id="uname" value=""
-						placeholder="è¯·è¾“å…¥ç”¨æˆ·å" /> <input type="password" name="upwd"
-						id="upwd" value="" placeholder="è¯·è¾“å…¥å¯†ç " />
-					<h2 class="getNew" onclick="changeLeft(-350)">ç”³è¯·è´¦å·</h2>
-					<a href="javascript:void(0);" class="forget">å¿˜è®°å¯†ç ?</a>
+						placeholder="ÇëÊäÈëÓÃ»§Ãû" /> <input type="password" name="upwd"
+						id="upwd" value="" placeholder="ÇëÊäÈëÃÜÂë" />
+					<h2 class="getNew" onclick="changeLeft(-350)">ÉêÇëÕËºÅ</h2>
+					<a href="javascript:void(0);" class="forget">Íü¼ÇÃÜÂë?</a>
 					<div class="sub">
-						<input type="button" name="" id="" value="ç™»å½•"
+						<input type="button" name="" id="" value="µÇÂ¼"
 							onclick="verification()" />
 					</div>
 				</form>
@@ -55,22 +55,22 @@
 			<div class="registered">
 				<form action="" id="zcform" method="post">
 					<ul class="reg_ul">
-						<li><span class="spanOne">ç”¨æˆ·å:</span> <input type="text"
-							name="regname" value="" placeholder="4-12ä½ç”¨æˆ·å(å°å†™å­—æ¯)"
+						<li><span class="spanOne">ÓÃ»§Ãû:</span> <input type="text"
+							name="regname" value="" placeholder="4-12Î»ÓÃ»§Ãû(Ğ¡Ğ´×ÖÄ¸)"
 							class="reg_user" id="regname" onblur="unameValid()"> <span
 							class="user_hint"></span></li>
-						<li><span class="spanTwo">å¯†ç :</span> <input type="password"
-							name="regpwd" value="" placeholder="6-16ä½å¯†ç " class="reg_password">
+						<li><span class="spanTwo">ÃÜÂë:</span> <input type="password"
+							name="regpwd" value="" placeholder="6-16Î»ÃÜÂë" class="reg_password">
 							<span class="password_hint"></span></li>
-						<li><span class="spanThree">ç¡®è®¤å¯†ç :</span> <input
-							type="password" name="" value="" placeholder="ç¡®è®¤å¯†ç "
+						<li><span class="spanThree">È·ÈÏÃÜÂë:</span> <input
+							type="password" name="" value="" placeholder="È·ÈÏÃÜÂë"
 							class="reg_confirm"> <span class="confirm_hint"></span></li>
-						<li><span class="spanFour">æ‰‹æœºå·ï¼š </span> <input type="email"
-							name="regphone" value="" placeholder="æ‰‹æœºå·" class="reg_mobile">
+						<li><span class="spanFour">ÊÖ»úºÅ£º </span> <input type="email"
+							name="regphone" value="" placeholder="ÊÖ»úºÅ" class="reg_mobile">
 							<span class="mobile_hint"></span></li>
-						<a onclick="changeLeft(0)">ä»¥æœ‰è´¦å·ç›´æ¥ç™»å½•</a>
+						<a onclick="changeLeft(0)">ÒÔÓĞÕËºÅÖ±½ÓµÇÂ¼</a>
 						<li>
-							<button type="button" name="button" class="red_button">æ³¨å†Œ</button>
+							<button type="button" name="button" class="red_button">×¢²á</button>
 						</li>
 					</ul>
 				</form>
