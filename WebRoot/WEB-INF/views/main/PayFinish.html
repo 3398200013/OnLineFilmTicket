@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<base href="<%=basePath%>">
+
+<title>完成支付</title>
+
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="fonts/iconfont.css" />
+
+</head>
+
+<body>
+	<jsp:include page="head.jsp"></jsp:include>
+	<div class="mainBox">
+		<div class="mainPayLeft">
+			<div class="ticketTop">
+				<h3>购票成功</h3>
+				<p>试试</p>
+			</div>
+			<div class="ticketMi">
+				<h3>试试</h3>
+				<p>
+					<span>2017.12.5</span><span>19:57</span>
+				</p>
+				<span>等等</span>
+				<c:forEach var="seat" items="${corder.seat}">
+					<span>10排9座</span>
+				</c:forEach>
+			</div>
+			<div class="ticketBot">
+				<div class="ticketBotTitle">
+					<p style="padding-top: 10px;">序列号：753700</p>
+					<p>验证码：022116</p>
+				</div>
+				<div class="ticketImg">
+					<img src="img/erweima.png" />
+				</div>
+			</div>
+		</div>
+		<div class="mainPayRight">
+			<h3>猜你喜欢</h3>
+			<ul>
+					<li><a href="#">
+							<div class="mainPayImgBox">
+								<img
+									src="img/actor5.png" />
+							</div>
+							<div class="mainPayTxtBox">
+								<p>是是是</p>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<div class="mainPayImgBox">
+								<img
+									src="img/actor5.png" />
+							</div>
+							<div class="mainPayTxtBox">
+								<p>是是是</p>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<div class="mainPayImgBox">
+								<img
+									src="img/actor5.png" />
+							</div>
+							<div class="mainPayTxtBox">
+								<p>是是是</p>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<div class="mainPayImgBox">
+								<img
+									src="img/actor5.png" />
+							</div>
+							<div class="mainPayTxtBox">
+								<p>是是是</p>
+							</div>
+					</a></li>
+
+					<li><a href="#">
+							<div class="mainPayImgBox">
+								<img
+									src="img/actor5.png" />
+							</div>
+							<div class="mainPayTxtBox">
+								<p>是是是</p>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<div class="mainPayImgBox">
+								<img
+									src="img/actor5.png" />
+							</div>
+							<div class="mainPayTxtBox">
+								<p>是是是</p>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<div class="mainPayImgBox">
+								<img
+									src="img/actor5.png" />
+							</div>
+							<div class="mainPayTxtBox">
+								<p>是是是</p>
+							</div>
+					</a></li>
+					<li><a href="#">
+							<div class="mainPayImgBox">
+								<img
+									src="img/actor5.png" />
+							</div>
+							<div class="mainPayTxtBox">
+								<p>是是是</p>
+							</div>
+					</a></li>
+
+					
+
+			</ul>
+			<a href="#">返回首页</a>
+		</div>
+	</div>
+
+	<div class="clear"></div>
+	<!--fotter-->
+	<div class="fotter">
+		<p>©2016 中软电影 icss.com 京ICP证166666号 京ICP备1666666号-1 京公网安备 1101号
+			网络文化经营许可证</p>
+	</div>
+
+</body>
+</html>
