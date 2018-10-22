@@ -1,4 +1,4 @@
-package com.pz.dao;
+package com.icss.pz;
 
 public class Test {
 
