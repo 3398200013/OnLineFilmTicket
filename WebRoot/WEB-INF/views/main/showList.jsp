@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -34,14 +35,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<a>更多&nbsp;&nbsp;>></a>
 				</div>
 				<ul class="hotNewsUl">
-						<li><a href="/DeatailSvl?mid=${symovie.mid}">
+						<c:forEach items="${newlist}" var="newmovies">
+							<li><a href="/DeatailSvl?mid=${newmovies.mid}">
 								<img
 								src="img/wushuang.png" />
-								<p>无双</p>
+								<p>${newmovies.mname}</p>
 								<p>
-									<i class="spanOne">8.</i><i class="spanTwo">9</i>
+									<i class="spanOne">${newmovies.score}/1.</i><i class="spanTwo">${newmovies.score}%1</i>
 								</p>
 						</a></li>
+						</c:forEach>
+						
+						
 						<li><a href="/DeatailSvl?mid=${symovie.mid}">
 								<img
 								src="img/jiandie.png" />

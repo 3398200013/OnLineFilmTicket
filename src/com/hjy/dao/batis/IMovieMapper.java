@@ -1,8 +1,10 @@
 package com.hjy.dao.batis;
 
+import java.util.List;
+
 import com.hjy.entity.Movie;
 
 public interface IMovieMapper {
-	public Movie getNewMovie() throws Exception;
-	public Movie getFutureMovie() throws Exception;
+	public List<Movie> getNewMovie() throws Exception;
+	public List<Movie> getFutureMovie() throws Exception;
 }

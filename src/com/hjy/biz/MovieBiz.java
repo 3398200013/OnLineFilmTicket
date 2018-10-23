@@ -1,5 +1,7 @@
 package com.hjy.biz;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,7 +19,7 @@ public class MovieBiz {
 	 * @return
 	 * @throws Exception
 	 */
-	public Movie getNewMovie() throws Exception{
+	public List<Movie> getNewMovie() throws Exception{
 		return movieDao.getNewMovie();
 	}
 	/**
@@ -25,7 +27,7 @@ public class MovieBiz {
 	 * @return
 	 * @throws Exception
 	 */
-	public Movie getFutureMovie() throws Exception{
+	public List<Movie> getFutureMovie() throws Exception{
 		return movieDao.getFutureMovie();
 	}
 }
