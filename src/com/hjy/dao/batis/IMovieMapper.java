@@ -1,4 +1,4 @@
-package com.pz.dao.batis;
+package com.hjy.dao.batis;
 
 import com.pz.entity.Movie;
 

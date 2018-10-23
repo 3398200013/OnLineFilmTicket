@@ -3,8 +3,8 @@ package com.pz.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.hjy.dao.batis.IMovieMapper;
 import com.pz.dao.BaseDao;
-import com.pz.dao.batis.IMovieMapper;
 import com.pz.entity.Movie;
 
 @Repository("movieDao")
