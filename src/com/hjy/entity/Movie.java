@@ -12,7 +12,6 @@ public class Movie {
 	private float score;
 	private String state;
 	private String details;
-	private byte[] cover;
 	private Date bjdate;
 	private int sealnumber;
 	private String actor;
@@ -69,12 +68,6 @@ public class Movie {
 	}
 	public void setDetails(String details) {
 		this.details = details;
-	}
-	public byte[] getCover() {
-		return cover;
-	}
-	public void setCover(byte[] cover) {
-		this.cover = cover;
 	}
 	public Date getBjdate() {
 		return bjdate;

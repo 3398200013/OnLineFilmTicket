@@ -23,7 +23,7 @@
 	-->
 <link rel="shortcut icon" href="img/logo.ico" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+<link rel="stylesheet" type="text/css" href="css/styleshowlist.css" />
 <link rel="stylesheet" type="text/css" href="fonts/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="css/picstyle.css" />
 <script type="text/javascript" src="js/login.js"></script>

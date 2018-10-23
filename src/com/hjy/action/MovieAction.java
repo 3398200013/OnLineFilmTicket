@@ -11,6 +11,8 @@ import com.hjy.biz.MovieBiz;
 import com.hjy.entity.Movie;
 import com.icss.util.Log;
 
+
+
 @Controller
 public class MovieAction {
 	@Autowired
@@ -29,7 +31,7 @@ public class MovieAction {
 			model.addAttribute("msg", "网络异常，请和管理员联系");
 			strRet = "/error/error.jsp";
 		}
-		model.addAttribute("list", newlist);
+		model.addAttribute("newlist", newlist);
 		model.addAttribute("futurelist", futurelist);
 		strRet = "main/showList.jsp";
 		return strRet;

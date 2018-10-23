@@ -41,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								src="img/wushuang.png" />
 								<p>${newmovies.mname}</p>
 								<p>
-									<i class="spanOne">${newmovies.score}/1.</i><i class="spanTwo">${newmovies.score}%1</i>
+									<i class="spanOne">${newmovies.score}</i>
 								</p>
 						</a></li>
 						</c:forEach>
