@@ -1,14 +1,14 @@
-package com.pz.dao;
+package com.hjy.dao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.hjy.entity.Movie;
 import com.pz.dao.BaseDao;
 import com.pz.dao.batis.IMovieMapper;
-import com.pz.entity.Movie;
 
 @Repository("movieDao")
-public class MovieDao extends BaseDao{
+public class MovieDao{
 
 	@Autowired
 	private IMovieMapper movieMapper;

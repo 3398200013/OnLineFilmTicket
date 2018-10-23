@@ -30,7 +30,7 @@
 	name="keywords">
 
 </head>
-
+<jsp:include page="head.jsp"></jsp:include>
 <body>
 	<div class="lunbo lunbo1">
 		<div class="ppt_stage">

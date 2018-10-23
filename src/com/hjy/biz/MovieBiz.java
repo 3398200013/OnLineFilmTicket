@@ -1,11 +1,11 @@
-package com.pz.biz;
+package com.hjy.biz;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pz.dao.MovieDao;
-import com.pz.entity.Movie;
+import com.hjy.dao.MovieDao;
+import com.hjy.entity.Movie;
 
 @Service("movieBiz")
 @Transactional(readOnly = true)

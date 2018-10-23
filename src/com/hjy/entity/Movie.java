@@ -1,4 +1,4 @@
-package com.pz.entity;
+package com.hjy.entity;
 
 import java.util.Date;
 
