@@ -58,7 +58,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<span id="userspan"></span>
 		<div class="login_regis" id="login_regis">
 			<div class="inputLable">
-				<form action="LoginSvl" id="dlform" method="post">
+				<form action="login" id="dlform" method="post">
 					<input type="text" name="uname" id="uname" value=""
 						placeholder="请输入用户名" /> <input type="password" name="upwd"
 						id="upwd" value="" placeholder="请输入密码" />

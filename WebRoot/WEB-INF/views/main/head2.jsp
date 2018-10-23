@@ -1,5 +1,4 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -27,53 +26,8 @@
 <link rel="stylesheet" type="text/css" href="fonts/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="css/picstyle.css" />
 <script type="text/javascript" src="js/login.js"></script>
-<script type="text/javascript" src="js/cityAZ.js"></script>
-<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="js/JavaScript.js"></script>
 <script type="text/javascript">
-
-
-$(function(){
-	showCitys();
-	 optionAdd.onclick = function (e) {
-	 var optionAdd = document.getElementById("optionAdd");
-    var optionAdd = optionAdd.querySelectorAll('a');
-    var e = e || window.event;
-    var target = e.target || e.srcElement;
-    if (target && target.nodeName == 'A') {
-    var cityP = document.getElementById("cityP");
-        cityP.innerText = target.innerText;
-    }
-   
-} 
-});
-
-/*显示城市的具体方法*/
-function showCitys() {
-var optionAdd = document.getElementById("optionAdd");
-	//alert(cityAll.length);
-   for(var i =0; i < cityAll.length; i++){
-   		var citysLen = cityAll[i].citys.length;
-   		 var ul = document.createElement('ul');
-   		 var span = document.createElement('span');
-   		 span.innerText = cityAll[i].name;
-   		 //alert(span.innerText);
-   		 ul.appendChild(span);
-   		
-   		 for(var j = 0; j < citysLen; j++){
-   		    
-   		 	 var aCity = document.createElement('a');
-   		 	 var li = document.createElement('li');
-   		 	 aCity.innerText = cityAll[i].citys[j];
-   		 	  //alert(aCity.innerText);
-   		 	 li.appendChild(aCity);
-   		 	 ul.appendChild(li);
-   		 }
-   		optionAdd.appendChild(ul);
-   }
-
-}
-
+//<jsp:include page="mhead.jsp"></jsp:include>
 	function unameValid() {
 		var regname = $('#changename').val();
 		var span = document.getElementById("examinuname");
@@ -108,20 +62,18 @@ var optionAdd = document.getElementById("optionAdd");
 		});
 	}
 </script>
-
 </head>
 
 <body>
 	<!--头部nav设置-->
 	<div class="nav">
 		<div class="nav_left">
-		<c:if test="${user==null}">
 			<div class="nav_left_title">
-				
+				<c:if test="${user==null}">
 					<a href="<%=basePath%>Login.jsp">登录</a>
 					<span>|</span>
-					<a href="<%=basePath%>Login.jsp?zhuce=a">注册</a>
-				
+					<a href="#">注册</a>
+				</c:if>
 				<!-- <c:if test="${user!=null}">
 					<div class="userPic">
 						<img src="UserPicSvl?uname=${user.uname}" />
@@ -129,21 +81,99 @@ var optionAdd = document.getElementById("optionAdd");
 					<p id="usernameOne">${user.uname}</p>
 				</c:if> -->
 			</div>
-			</c:if>
-			<div class="selectAdd" style="width: 130px" align="center">
+			<div class="selectAdd">
+				<span class="iconfont">&#xe632;</span>
 				<p>
-					<span class="iconfont">&#xe632;</span>
-					<a id='cityP'>北京</a>
-					<span class="arrow iconfont">&#xe625;</span>
+					北京<span class="arrow iconfont">&#xe625;</span>
 				</p>
-				
-				<div class="optionAddBox" >
+				<div class="optionAddBox">
 					<div class="triangle"></div>
-					<div class="optionAdd" id="optionAdd">
-					
-					
-					
-					
+					<div class="optionAdd">
+						<ul>
+							<span>A</span>
+							<li><a href="#">阿坝</a></li>
+							<li><a href="#">阿拉善</a></li>
+							<li><a href="#">阿里</a></li>
+							<li><a href="#">安康</a></li>
+							<li><a href="#">安庆</a></li>
+							<li><a href="#">鞍山</a></li>
+							<li><a href="#">安顺</a></li>
+							<li><a href="#">安阳</a></li>
+							<li><a href="#">澳门</a></li>
+						</ul>
+						<ul>
+							<span>A</span>
+							<li><a href="#">阿坝</a></li>
+							<li><a href="#">阿拉善</a></li>
+							<li><a href="#">阿里</a></li>
+							<li><a href="#">安康</a></li>
+							<li><a href="#">安庆</a></li>
+							<li><a href="#">鞍山</a></li>
+							<li><a href="#">安顺</a></li>
+							<li><a href="#">安阳</a></li>
+							<li><a href="#">澳门</a></li>
+						</ul>
+						<ul>
+							<span>A</span>
+							<li><a href="#">阿坝</a></li>
+							<li><a href="#">阿拉善</a></li>
+							<li><a href="#">阿里</a></li>
+							<li><a href="#">安康</a></li>
+							<li><a href="#">安庆</a></li>
+							<li><a href="#">鞍山</a></li>
+							<li><a href="#">安顺</a></li>
+							<li><a href="#">安阳</a></li>
+							<li><a href="#">澳门</a></li>
+						</ul>
+						<ul>
+							<span>A</span>
+							<li><a href="#">阿坝</a></li>
+							<li><a href="#">阿拉善</a></li>
+							<li><a href="#">阿里</a></li>
+							<li><a href="#">安康</a></li>
+							<li><a href="#">安庆</a></li>
+							<li><a href="#">鞍山</a></li>
+							<li><a href="#">安顺</a></li>
+							<li><a href="#">安阳</a></li>
+							<li><a href="#">澳门</a></li>
+						</ul>
+						<ul>
+							<span>A</span>
+							<li><a href="#">阿坝</a></li>
+							<li><a href="#">阿拉善</a></li>
+							<li><a href="#">阿里</a></li>
+							<li><a href="#">安康</a></li>
+							<li><a href="#">安庆</a></li>
+							<li><a href="#">鞍山</a></li>
+							<li><a href="#">安顺</a></li>
+							<li><a href="#">安阳</a></li>
+							<li><a href="#">澳门</a></li>
+						</ul>
+						<ul>
+							<span>A</span>
+							<li><a href="#">阿坝</a></li>
+							<li><a href="#">阿拉善</a></li>
+							<li><a href="#">阿里</a></li>
+							<li><a href="#">安康</a></li>
+							<li><a href="#">安庆</a></li>
+							<li><a href="#">鞍山</a></li>
+							<li><a href="#">安顺</a></li>
+							<li><a href="#">安阳</a></li>
+							<li><a href="#">澳门</a></li>
+						</ul>
+						<ul>
+							<span>A</span>
+							<li><a href="#">阿坝</a></li>
+							<li><a href="#">阿拉善</a></li>
+							<li><a href="#">阿里</a></li>
+							<li><a href="#">安康</a></li>
+							<li><a href="#">安庆</a></li>
+							<li><a href="#">鞍山</a></li>
+							<li><a href="#">安顺</a></li>
+							<li><a href="#">安阳</a></li>
+							<li><a href="#">澳门</a></li>
+						</ul>
+						
 					</div>
 				</div>
 			</div>
@@ -171,7 +201,7 @@ var optionAdd = document.getElementById("optionAdd");
 					</div>
 				</div>
 			</div>
-		<c:if test="${user!=null}">
+			<c:if test="${user!=null}">
 				<div class="myOrder selectAdd">
 					<p>
 						修改信息<span class="arrow iconfont">&#xe625;</span>
@@ -301,16 +331,18 @@ var optionAdd = document.getElementById("optionAdd");
 						<div class="myIntegralBox">
 							<div class="myIntegralBoxPage">
 								<div class="textBox">
-									<h3 id="usernameTwo">${user.uname}</h3>
-									
+									<h3 id="usernameTwo">测试</h3>
 									<p>
-										绑定手机 : <span>${user.tel}</span>
+										购买票数 : <span>0</span>
 									</p>
 									<p>
-										账户余额 : <span class="userbalanceshow" id="userbalanceshow">${user.balance}</span>
+										绑定手机 : <span>12345678911</span>
+									</p>
+									<p>
+										账户余额 : <span class="userbalanceshow" id="userbalanceshow">1000</span>
 									</p>
 									<h5>
-										个性签名 : <span class="usertxtshow">${user.usertxt}</span>
+										个性签名 : <span class="usertxtshow">试试</span>
 									</h5>
 								</div>
 								<div class="imageBox">
@@ -326,6 +358,8 @@ var optionAdd = document.getElementById("optionAdd");
 		</div>
 	</div>
 
+	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript" src="js/JavaScript.js"></script>
 	<script type="text/javascript">
 		var span = document.getElementById("examinuname");
 		var w,

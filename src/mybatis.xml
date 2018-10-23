@@ -9,16 +9,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	</settings>
 	
 	<typeAliases>
-          <typeAlias alias="TBook" type="com.icss.entity.TBook"/>
-          <typeAlias alias="TUser" type="com.icss.entity.TUser"/>
-           <typeAlias alias="TOrder" type="com.icss.entity.TOrder"/>
-           <typeAlias alias="TOrderDetail" type="com.icss.entity.TOrderDetail"/>
-           <typeAlias alias="TBookType" type="com.icss.entity.TBookType"/>
+          <typeAlias alias="TUser" type="com.hjy.entity.TUser"/>
+         
     </typeAliases>
 
 	<mappers>
-		<mapper resource="com/icss/dao/batis/userMapper.xml" />
-		<mapper resource="com/icss/dao/batis/bookMapper.xml" />
+		<mapper resource="com/hjy/dao/batis/LoginMapper.xml" />
 	</mappers>
 
 

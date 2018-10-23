@@ -14,8 +14,7 @@
 		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 
-	<context:component-scan base-package="com.icss.action" />
-	<context:component-scan base-package="com.icss.action.back" />
+	<context:component-scan base-package="com.hjy.action" />
 	<mvc:annotation-driven />
 
 	<bean
@@ -54,13 +53,13 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@10.0.8.251:1521:orcl" />
-		<property name="username" value="movie0" />
+		<property name="username" value="movie01" />
 		<property name="password" value="1234560" />
 	</bean>
 	
 	<context:annotation-config />
-	<context:component-scan base-package="com.icss.biz" />
-	<context:component-scan base-package="com.icss.dao" />
+	<context:component-scan base-package="com.hjy.biz" />
+	<context:component-scan base-package="com.hjy.dao" />
 
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="configLocation" value="classpath:mybatis.xml" />
@@ -75,7 +74,7 @@
 	</bean>
 
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="com.icss.dao.batis" />
+		<property name="basePackage" value="com.hjy.dao.batis" />
 	</bean>
 
 </beans>
