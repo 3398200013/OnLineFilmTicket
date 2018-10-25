@@ -31,4 +31,13 @@ public class MovieDao{
 	public List<Movie> getFutureMovie() throws Exception{
 		return movieMapper.getFutureMovie();
 	}
+	/**
+	 * 查询影片详细信息
+	 * @param mid
+	 * @return
+	 * @throws Exception
+	 */
+	public Movie getMovie(String mid) throws Exception{
+		return movieMapper.getMovie(mid);
+	}
 }

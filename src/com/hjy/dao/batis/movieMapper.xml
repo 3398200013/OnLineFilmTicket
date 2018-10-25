@@ -4,9 +4,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hjy.dao.batis.IMovieMapper">
 
-<!-- 	<resultMap type="Movie" id="MovieMap">
-		<result property="mid" column="mid" jdbcType="VARCHAR"/>
-		<result property="mname" column="mname" jdbcType="VARCHAR"/>	
+	<!-- <resultMap type="Movie" id="MovieMap">
+ 		<result property="mid" column="mid" jdbcType="VARCHAR"/>
+    	<result property="mname" column="mname" jdbcType="VARCHAR"/>	
 		<result property="length" column="length" jdbcType="VARCHAR"/>
 		<result property="area" column="area" jdbcType="VARCHAR"/>
 		<result property="type" column="type" jdbcType="VARCHAR"/>
@@ -14,8 +14,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="score" column="score" jdbcType="NUMBER"/>
 		<result property="state" column="state" jdbcType="VARCHAR"/>
 		<result property="details" column="details" jdbcType="VARCHAR"/>
-		<result property="bjdate" column="bjdate" jdbcType="DATE"/>
-		<result property="sealnumber" column="sealnumber" jdbcType="NUMBER"/>
+		<result property="bgdate" column="bjdate" jdbcType="DATE"/>
+		<result property="sealnum" column="sealnumber" jdbcType="NUMBER"/>
 		<result property="actor" column="actor" jdbcType="VARCHAR"/>
 	</resultMap> -->
 
@@ -23,6 +23,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select  mid,mname,score from TMovie where state=1
      </select>
      <select id="getFutureMovie" resultType="Movie">
-        select  mid,mname,director,length,actor from TMovie where state=2
+        select  mid,mname,director,length,actor,bgdate from TMovie where state=2
+     </select>
+      <select id="getMovie" resultType="Movie">
+        select mid,mname,length,area,type,director,score,details,bgdate,sealnum,actor from TMovie where mid=#{mid}
      </select>
 </mapper>

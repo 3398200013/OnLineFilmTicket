@@ -30,4 +30,13 @@ public class MovieBiz {
 	public List<Movie> getFutureMovie() throws Exception{
 		return movieDao.getFutureMovie();
 	}
+	/**
+	 * 查询影片详细信息
+	 * @param mid
+	 * @return
+	 * @throws Exception
+	 */
+	public Movie getMovie(String mid) throws Exception{
+		return movieDao.getMovie(mid);
+	}
 }

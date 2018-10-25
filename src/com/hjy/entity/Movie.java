@@ -1,5 +1,6 @@
 package com.hjy.entity;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Movie {
@@ -12,9 +13,10 @@ public class Movie {
 	private float score;
 	private String state;
 	private String details;
-	private Date bjdate;
-	private int sealnumber;
+	private Date bgdate;
+	private int sealnum;
 	private String actor;
+	
 	public String getMid() {
 		return mid;
 	}
@@ -69,23 +71,23 @@ public class Movie {
 	public void setDetails(String details) {
 		this.details = details;
 	}
-	public Date getBjdate() {
-		return bjdate;
-	}
-	public void setBjdate(Date bjdate) {
-		this.bjdate = bjdate;
-	}
-	public int getSealnumber() {
-		return sealnumber;
-	}
-	public void setSealnumber(int sealnumber) {
-		this.sealnumber = sealnumber;
-	}
 	public String getActor() {
 		return actor;
 	}
 	public void setActor(String actor) {
 		this.actor = actor;
+	}
+	public Date getBgdate() {
+		return bgdate ;
+	}
+	public void setBgdate(Date bgdate) {
+		this.bgdate = bgdate;
+	}
+	public int getSealnum() {
+		return sealnum;
+	}
+	public void setSealnum(int sealnum) {
+		this.sealnum = sealnum;
 	}
 	
 }
