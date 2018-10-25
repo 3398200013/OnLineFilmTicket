@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -38,12 +39,12 @@
 				<div class="ppt_text_1">
 					<p>${movie.type}</p>
 					<p>${movie.area }/${movie.length }分钟</p>
-					<p>${movie.bgdate}  大陆上映</p>
+					<p><fmt:formatDate value="${movie.bgdate}" pattern="yyyy-MM-dd"/> 大陆上映</p>
 				</div>
 			</div>
 			<div class="ppt_module_1">
 				<img class="ppt_movie"
-					src="img/bigwushuang.jpg" />
+					src="${movie.cover }" />
 				<h1>${movie.mname }</h1>
 				<h2 style="display:none">Contratiempo</h2>
 				<div class="ppt_text_2">

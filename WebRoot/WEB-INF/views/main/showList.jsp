@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -38,7 +39,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<c:forEach items="${newlist}" var="newmovies">
 							<li><a href="movie.do?mid=${newmovies.mid}">
 								<img
-								src="img/ying.png" />
+								src="${newmovies.cover }" />
 								<p>${newmovies.mname}</p>
 								<p>
 									<i class="spanOne">${newmovies.score}</i>
@@ -60,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="hotMovieBox">
 									<div class="hotMovieImg">
 										<img
-											src="img/muguangbali.png" />
+											src="${futuremovies.cover}" />
 										<div class="introduction">
 											<h4>${futuremovies.mname}</h4>
 											<p>导演：${futuremovies.director}</p>
@@ -76,7 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									</div>
 								</div>
 						</a>
-							<p>${futuremovies.bgdate}上映</p></li>
+							<p><fmt:formatDate value="${futuremovies.bgdate}" pattern="yyyy-MM-dd"/>上映</p></li>
 					</c:forEach>
 				</ul>
 			</div>

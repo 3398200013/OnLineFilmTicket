@@ -20,12 +20,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</resultMap> -->
 
  	<select id="getNewMovie" resultType="Movie">
-        select  mid,mname,score from TMovie where state=1
+        select  mid,mname,score,cover from TMovie where state=1
      </select>
      <select id="getFutureMovie" resultType="Movie">
-        select  mid,mname,director,length,actor,bgdate from TMovie where state=2
+        select  mid,mname,director,length,actor,bgdate,cover from TMovie where state=2
      </select>
       <select id="getMovie" resultType="Movie">
-        select mid,mname,length,area,type,director,score,details,bgdate,sealnum,actor from TMovie where mid=#{mid}
+        select mid,mname,length,area,type,director,score,details,bgdate,sealnum,actor,cover from TMovie where mid=#{mid}
      </select>
 </mapper>

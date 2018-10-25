@@ -1,6 +1,5 @@
 package com.hjy.entity;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Movie {
@@ -16,7 +15,14 @@ public class Movie {
 	private Date bgdate;
 	private int sealnum;
 	private String actor;
+	private String cover;
 	
+	public String getCover() {
+		return cover;
+	}
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
 	public String getMid() {
 		return mid;
 	}
