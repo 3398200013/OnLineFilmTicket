@@ -39,4 +39,21 @@ public class MovieBiz {
 	public Movie getMovie(String mid) throws Exception{
 		return movieDao.getMovie(mid);
 	}
+	
+	/**
+	 * 查询全部最新上映影片
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Movie> getAllNewMovie() throws Exception{
+		return movieDao.getAllNewMovie();
+	}
+	/**
+	 * 查询全部即将上映影片
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Movie> getAllFutureMovie() throws Exception{
+		return movieDao.getAllFutureMovie();
+	}
 }

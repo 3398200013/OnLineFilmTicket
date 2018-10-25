@@ -12,14 +12,13 @@
 <head>
 <base href="<%=basePath%>">
 
-<title>影片</title>
+<title>全部即将上映影片</title>
 
 <meta http-equiv="pragma" content="no-cache">
 <meta http-equiv="cache-control" content="no-cache">
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-
 <link rel="stylesheet" type="text/css" href="css/styleshowlist.css" />
 <link rel="stylesheet" type="text/css" href="fonts/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="css/picstyle.css" />
@@ -28,33 +27,13 @@
 <body>
 	<jsp:include page="head.jsp"></jsp:include>
 	<div class="mainBox">
-		<!--最新上映-->
-		<div class="hotNews">
-			<div class="hotNewsTitle">
-				<h1>最新上映</h1>
-				<a href="allnewmovie.do">更多&nbsp;&nbsp;>></a>
-			</div>
-			<ul class="hotNewsUl">
-				<c:forEach items="${newlist}" var="newmovies">
-					<li><a href="movie.do?mid=${newmovies.mid}"> <img
-							src="${newmovies.cover }" />
-							<p>${newmovies.mname}</p>
-							<p>
-								<i class="spanOne">${newmovies.score}</i>
-							</p>
-					</a></li>
-				</c:forEach>
-
-			</ul>
-		</div>
 		<!-- 即将上映 -->
 		<div class="hotMovie">
 			<div class="hotNewsTitle">
 				<h1>即将上映</h1>
-				<a href="allfuturemovie.do">更多&nbsp;&nbsp;>></a>
 			</div>
 			<ul class="hotMovieUl">
-				<c:forEach items="${futurelist}" var="futuremovies">
+				<c:forEach items="${allfuturemovie}" var="futuremovies">
 					<li><a href="movie.do?mid=${futuremovies.mid}">
 							<div class="hotMovieBox">
 								<div class="hotMovieImg">
@@ -74,14 +53,11 @@
 								</div>
 							</div>
 					</a>
-						<p>
-							<fmt:formatDate value="${futuremovies.bgdate}"
-								pattern="yyyy-MM-dd" />
-							上映
-						</p></li>
+						<p><fmt:formatDate value="${futuremovies.bgdate}"	 pattern="yyyy-MM-dd" />上映</p></li>
 				</c:forEach>
 			</ul>
 		</div>
 	</div>
 </body>
+
 </html>
