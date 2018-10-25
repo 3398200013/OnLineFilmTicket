@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -55,10 +56,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<img src="img/logo.png" />
 			<p id="title">用户登录</p>
 		</div>
-		<span id="userspan"></span>
+		<span id="userspan">
+		<c:if test="${error == '1'}">
+			<span class="iconfont icontxt">&#xe637;</span>用户名或密码错误
+		</c:if>
+		</span>
 		<div class="login_regis" id="login_regis">
 			<div class="inputLable">
-				<form action="login" id="dlform" method="post">
+				<form action="<%=basePath%>login.do" id="dlform" method="post">
 					<input type="text" name="uname" id="uname" value=""
 						placeholder="请输入用户名" /> <input type="password" name="upwd"
 						id="upwd" value="" placeholder="请输入密码" />

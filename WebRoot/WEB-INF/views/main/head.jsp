@@ -32,7 +32,6 @@
 <script type="text/javascript" src="js/JavaScript.js"></script>
 <script type="text/javascript">
 
-
 $(function(){
 	showCitys();
 	 optionAdd.onclick = function (e) {
@@ -115,24 +114,26 @@ var optionAdd = document.getElementById("optionAdd");
 	<!--头部nav设置-->
 	<div class="nav">
 		<div class="nav_left">
-		<c:if test="${user==null}">
+		
 			<div class="nav_left_title">
-				
+				<c:if test="${user==null}">
 					<a href="<%=basePath%>Login.jsp">登录</a>
 					<span>|</span>
 					<a href="<%=basePath%>Login.jsp?zhuce=a">注册</a>
+				</c:if>
 				
-				<!-- <c:if test="${user!=null}">
+				 <c:if test="${user!=null}">
+					
 					<div class="userPic">
-						<img src="UserPicSvl?uname=${user.uname}" />
+						<img src="GetPicSvl?uname=${user.uname}" />
 					</div>
 					<p id="usernameOne">${user.uname}</p>
-				</c:if> -->
+				</c:if> 
 			</div>
-			</c:if>
-			<div class="selectAdd" style="width: 130px" align="center">
+			
+			<div class="selectAdd" >
 				<p>
-					<span class="iconfont">&#xe632;</span>
+				<span class="iconfont">&#xe632;</span>
 					<a id='cityP'>北京</a>
 					<span class="arrow iconfont">&#xe625;</span>
 				</p>
@@ -141,13 +142,11 @@ var optionAdd = document.getElementById("optionAdd");
 					<div class="triangle"></div>
 					<div class="optionAdd" id="optionAdd">
 					
-					
-					
-					
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		<div class="nav_right">
 			<div class="customer selectAdd">
 				<p>
@@ -193,9 +192,12 @@ var optionAdd = document.getElementById("optionAdd");
 											</div>
 
 											<div id="dialogBg"></div>
+						
 											<div id="tochangename" class="animated">
+											
 												<img class="dialogIco" width="50" height="50"
-													src="img/ico.png" alt="" />
+													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
+													
 												<div class="dialogTop">
 													<a class="claseDialogBtn">取消</a>
 												</div>
@@ -213,7 +215,7 @@ var optionAdd = document.getElementById("optionAdd");
 											</div>
 											<div id="tochangepwd" class="animated">
 												<img class="dialogIco" width="50" height="50"
-													src="img/ico.png" alt="" />
+													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
 												<div class="dialogTop">
 													<a href="javascript:;" class="claseDialogBtn">取消</a>
 												</div>
@@ -236,22 +238,24 @@ var optionAdd = document.getElementById("optionAdd");
 											</div>
 											<div id="tochangeimg" class="animated">
 												<img class="dialogIco" width="50" height="50"
-													src="img/ico.png" alt="" />
+													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
 												<div class="dialogTop">
 													<a href="javascript:;" class="claseDialogBtn">取消</a>
 												</div>
-												<form action="" method="post" id="editForm">
+												<form action="<%=basePath%>PicServlet" method="post" id="editForm" enctype="multipart/form-data">
 													<ul class="editInfos">
 														<li><label><font color="#ff0000">修改头像*
-															</font><input type="password" name="" required value=""
-																class="ipt" /></label></li>
-														<li><input type="button" value="提交" class="submitBtn" /></li>
+															</font>
+															</label></li>
+															<li><input type="file" name="file" id="file" width="100%" value="file"
+																 /></li>
+														<li><input type="submit" value="提交" class="submitBtn" /></li>
 													</ul>
 												</form>
 											</div>
 											<div id="tochangetxt" class="animated">
-												<img class="dialogIco" width="50" height="50"
-													src="img/ico.png" alt="" />
+												<img class="dialogIco" width="50" height="50" id="dialogIco"
+													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
 												<div class="dialogTop">
 													<a href="javascript:;" class="claseDialogBtn">取消</a>
 												</div>
@@ -269,7 +273,7 @@ var optionAdd = document.getElementById("optionAdd");
 											</div>
 											<div id="tochangebalance" class="animated">
 												<img class="dialogIco" width="50" height="50"
-													src="img/ico.png" alt="" />
+													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
 												<div class="dialogTop">
 													<a href="javascript:;" class="claseDialogBtn">取消</a>
 												</div>
@@ -316,8 +320,8 @@ var optionAdd = document.getElementById("optionAdd");
 								<div class="imageBox">
 									<img src="img/logo.png" />
 								</div>
-								<a href="LogoutSvl?url=MainSvl">退出登录</a> <a
-									href="LogoutSvl?url=LoginSvl" id="logout"></a>
+								<a href="outLogin.do">退出登录</a> <a
+									href="outLogin.do" id="logout"></a>
 							</div>
 						</div>
 					</div>

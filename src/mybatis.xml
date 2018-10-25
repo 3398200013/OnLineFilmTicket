@@ -10,11 +10,12 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	
 	<typeAliases>
           <typeAlias alias="TUser" type="com.hjy.entity.TUser"/>
-         
+          <typeAlias alias="Movie" type="com.hjy.entity.Movie"/>
     </typeAliases>
 
 	<mappers>
 		<mapper resource="com/hjy/dao/batis/LoginMapper.xml" />
+		<mapper resource="com/hjy/dao/batis/movieMapper.xml" />
 	</mappers>
 
 

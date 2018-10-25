@@ -24,8 +24,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	href="css/picstyle.css" />
 	
   </head>
-  <jsp:include page="head.jsp"></jsp:include>
   <body>
+   <jsp:include page="head.jsp"></jsp:include>
     <div class="mainBox">
 			<!--最新上映-->
 			<div class="hotNews">

@@ -4,7 +4,7 @@
 	border: 0;
 	list-style: none;
 	text-decoration: none;
-	font-family: "微软雅黑";
+	font-family: "寰蒋闆呴粦";
 }
 
 html, body {
@@ -47,7 +47,7 @@ a {
 	float: left;
 	width: 270px;
 	height: 35px;
-	padding: 5px 0 0 50px;
+	padding: 5px 0 0 30px;
 }
 
 .nav_left_title {
@@ -98,7 +98,7 @@ a {
 	transform: rotate(180deg);
 	-ms-transform: rotate(180deg); /* IE 9 */
 	-moz-transform: rotate(180deg); /* Firefox */
-	-webkit-transform: rotate(180deg); /* Safari 和 Chrome */
+	-webkit-transform: rotate(180deg); /* Safari 鍜� Chrome */
 	-o-transform: rotate(180deg); /* Opera */
 }
 
@@ -213,7 +213,7 @@ a {
 	border-radius: 5px;
 }
 
-/*个人信息*/
+/*涓汉淇℃伅*/
 .myIntegralBoxPage {
 	width: 84%;
 	height: 250px;
@@ -459,7 +459,7 @@ a {
 	margin: 50px auto;
 	overflow: hidden;
 }
-/*热点新闻*/
+/*鐑偣鏂伴椈*/
 .hotNews {
 	width: 60%;
 	margin-right: 2%;
@@ -543,7 +543,7 @@ a {
 	font-size: 14px !important;
 }
 
-/*票房飙升榜*/
+/*绁ㄦ埧椋欏崌姒�*/
 .topNo {
 	width: 35%;
 	float: right;
@@ -650,7 +650,7 @@ a {
 	line-height: 40px;
 }
 
-/*即将上映*/
+/*鍗冲皢涓婃槧*/
 .hotMovie {
 	float: left;
 	width: 60%;
@@ -774,7 +774,7 @@ a {
 .hotMovieBox:hover {
 	box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.4);
 }
-/*最受期待*/
+/*鏈�鍙楁湡寰�*/
 .mostAwait {
 	width: 35%;
 	float: right;
@@ -846,7 +846,7 @@ a {
 	color: #666;
 	line-height: 100px;
 }
-/*order页面*/
+/*order椤甸潰*/
 .orderMain {
 	width: 1200px;
 	margin: 20px auto;

@@ -10,6 +10,7 @@ function verification(){
 	}
 	var dlform = document.getElementById("dlform");
 	dlform.submit();
+	
 }
 //切换登录注册页
 function changeLeft(y){
