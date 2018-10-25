@@ -1,5 +1,7 @@
 package com.hjy.dao;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -18,7 +20,7 @@ public class MovieDao{
 	 * @return
 	 * @throws Exception
 	 */
-	public Movie getNewMovie() throws Exception{
+	public List<Movie> getNewMovie() throws Exception{
 		return movieMapper.getNewMovie();
 	}
 	/**
@@ -26,7 +28,16 @@ public class MovieDao{
 	 * @return
 	 * @throws Exception
 	 */
-	public Movie getFutureMovie() throws Exception{
+	public List<Movie> getFutureMovie() throws Exception{
 		return movieMapper.getFutureMovie();
+	}
+	/**
+	 * 查询影片详细信息
+	 * @param mid
+	 * @return
+	 * @throws Exception
+	 */
+	public Movie getMovie(String mid) throws Exception{
+		return movieMapper.getMovie(mid);
 	}
 }

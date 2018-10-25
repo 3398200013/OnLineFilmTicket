@@ -36,20 +36,20 @@
 		<div class="ppt_stage">
 			<div class="ppt_bg_1">
 				<div class="ppt_text_1">
-					<p>动作,犯罪</p>
-					<p>中国大陆,中国香港/130分钟</p>
-					<p>2018-09-30  大陆上映</p>
+					<p>${movie.type}</p>
+					<p>${movie.area }/${movie.length }分钟</p>
+					<p>${movie.bgdate}  大陆上映</p>
 				</div>
 			</div>
 			<div class="ppt_module_1">
 				<img class="ppt_movie"
 					src="img/bigwushuang.jpg" />
-				<h1>无双</h1>
+				<h1>${movie.mname }</h1>
 				<h2 style="display:none">Contratiempo</h2>
 				<div class="ppt_text_2">
 					<p>用户评分</p>
 					<h3>
-						<span id="movie_score">8.9</span> <img
+						<span id="movie_score">${movie.score}</span> <img
 							class="icon_star" src="img/icon_star.png"
 							style="width:150px;hright:32px;" />
 						<div id="icon_star_r">
@@ -98,7 +98,7 @@
 				</div>
 				<div class="ppt_text_3">
 					<h1>累计票房</h1>
-					<h2>1.3亿</h2>
+					<h2>${movie.sealnum/100000000}亿</h2>
 				</div>
 			</div>
 		</div>
@@ -129,7 +129,7 @@
 	<div class="main_box">
 		<div class="deatails_box plot">
 			<div class="plot_title">剧情介绍</div>
-			<div class="plot_content">《无双》讲述了以代号“画家”（周润发饰）为首的犯罪团伙，掌握了制造伪钞技术，难辨真伪，并在全球进行交易获取利益，引起警方高度重视。然而“画家”和其他成员的身份一直成谜，警方的破案进度遭受到了前所未有的挑战。在关键时刻，擅长绘画的李问（郭富城饰）打开了破案的突破口，而“画家”的真实身份却让众人意想不到……</div>
+			<div class="plot_content">${movie.details}</div>
 		</div>
 		<div class="deatails_box actor">
 			<div class="actor_title">演职人员</div>
@@ -198,7 +198,7 @@
 
 	<!--版权-->
 	<div class="fotter">
-		<p>©2016 中软电影 icss.com 京ICP证166666号 京ICP备1666666号-1 京公网安备 1101号
+		<p>©2018 中软电影 icss.com 京ICP证166666号 京ICP备1666666号-1 京公网安备 1101号
 			网络文化经营许可证</p>
 	</div>
 	<script src="js/jquery-1.11.0.min.js" type="text/javascript"
