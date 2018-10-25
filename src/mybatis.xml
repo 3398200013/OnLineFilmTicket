@@ -15,7 +15,11 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 
 	<mappers>
 		<mapper resource="com/hjy/dao/batis/LoginMapper.xml" />
+<<<<<<< HEAD
 		<mapper resource="com/hjy/dao/batis/movieMapper.xml" />
+=======
+		<mapper resource="com/hjy/dao/batis/movieMapper.xml"/>
+>>>>>>> 0b83b1fc273828555c575663a4dff1159c24e5f2
 	</mappers>
 
 
