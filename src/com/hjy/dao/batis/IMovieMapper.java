@@ -16,6 +16,6 @@ public interface IMovieMapper {
 	public List<TMovie> getNewestMovie(Date indate)throws Exception;
 	public List<TMovie> getsyMovie(Date indate) throws Exception;
 	
-	public List<Movie> getAllNewMovie() throws Exception;
-	public List<Movie> getAllFutureMovie() throws Exception;
+	public List<TMovie> getAllNewMovie() throws Exception;
+	public List<TMovie> getAllFutureMovie() throws Exception;
 }

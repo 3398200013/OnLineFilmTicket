@@ -43,7 +43,7 @@ public class MovieDao{
 		return movieMapper.getMovie(mid);
 	}
 	
-<<<<<<< HEAD
+
 	/**
 	 * 画廊
 	 * @return
@@ -74,15 +74,14 @@ public class MovieDao{
 	}
 	
 	
-	
-=======
+
 	
 	/**
 	 * 查询全部最新上映影片
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Movie> getAllNewMovie() throws Exception{
+	public List<TMovie> getAllNewMovie() throws Exception{
 		return movieMapper.getAllNewMovie();
 	}
 	/**
@@ -90,8 +89,7 @@ public class MovieDao{
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Movie> getAllFutureMovie() throws Exception{
+	public List<TMovie> getAllFutureMovie() throws Exception{
 		return movieMapper.getAllFutureMovie();
 	}
->>>>>>> 89e31252e4c79e7e83a9ed236b42f93ab845d276
 }

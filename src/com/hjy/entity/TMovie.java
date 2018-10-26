@@ -11,22 +11,12 @@ public class TMovie {
 	private String director;
 	private double score;
 	private int state;
-	private String detials;
+	private String details;
 	private String cover;
 	private Date bgdate;
-	private int sealnumber;
+	private int sealnum;
 	private String actor;
-<<<<<<< HEAD:src/com/hjy/entity/TMovie.java
-=======
-	private String cover;
-	
-	public String getCover() {
-		return cover;
-	}
-	public void setCover(String cover) {
-		this.cover = cover;
-	}
->>>>>>> 89e31252e4c79e7e83a9ed236b42f93ab845d276:src/com/hjy/entity/Movie.java
+
 	public String getMid() {
 		return mid;
 	}
@@ -75,11 +65,11 @@ public class TMovie {
 	public void setState(int state) {
 		this.state = state;
 	}
-	public String getDetials() {
-		return detials;
+	public String getDetails() {
+		return details;
 	}
-	public void setDetials(String detials) {
-		this.detials = detials;
+	public void setDetails(String details) {
+		this.details = details;
 	}
 	public String getCover() {
 		return cover;
@@ -93,11 +83,11 @@ public class TMovie {
 	public void setbgdate(Date bgdate) {
 		this.bgdate = bgdate;
 	}
-	public int getSealnumber() {
-		return sealnumber;
+	public int getSealnum() {
+		return sealnum;
 	}
-	public void setSealnumber(int sealnumber) {
-		this.sealnumber = sealnumber;
+	public void setSealnum(int sealnum) {
+		this.sealnum = sealnum;
 	}
 	public String getActor() {
 		return actor;

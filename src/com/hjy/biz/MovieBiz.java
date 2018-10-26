@@ -43,7 +43,6 @@ public class MovieBiz {
 	}
 	
 	/**
-<<<<<<< HEAD
 	 * 画廊
 	 * @return
 	 * @throws Exception
@@ -70,12 +69,13 @@ public class MovieBiz {
 	public List<TMovie> getsyMovie(Date indate) throws Exception{
 		
 		return movieDao.getsyMovie(indate);
-=======
-	 * 查询全部最新上映影片
+	}
+	
+	/** 查询全部最新上映影片
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Movie> getAllNewMovie() throws Exception{
+	public List<TMovie> getAllNewMovie() throws Exception{
 		return movieDao.getAllNewMovie();
 	}
 	/**
@@ -83,8 +83,8 @@ public class MovieBiz {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Movie> getAllFutureMovie() throws Exception{
+	public List<TMovie> getAllFutureMovie() throws Exception{
 		return movieDao.getAllFutureMovie();
->>>>>>> 89e31252e4c79e7e83a9ed236b42f93ab845d276
+
 	}
 }

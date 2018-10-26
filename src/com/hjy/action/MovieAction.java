@@ -58,7 +58,7 @@ public class MovieAction {
 	@RequestMapping("/allnewmovie")
 	public String getAllNewMovies(Model model){
 		String strRet;
-		List<Movie> allnewmovie = null;
+		List<TMovie> allnewmovie = null;
 		try {
 			allnewmovie = moviebiz.getAllNewMovie();
 		} catch (Exception e) {
@@ -73,7 +73,7 @@ public class MovieAction {
 	@RequestMapping("/allfuturemovie")
 	public String getAllFutureMovies(Model model){
 		String strRet;
-		List<Movie> allfuturemovie = null;
+		List<TMovie> allfuturemovie = null;
 		try {
 			allfuturemovie = moviebiz.getAllFutureMovie();
 		} catch (Exception e) {
