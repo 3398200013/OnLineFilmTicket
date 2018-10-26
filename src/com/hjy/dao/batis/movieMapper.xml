@@ -19,6 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="actor" column="actor" jdbcType="VARCHAR"/>
 	</resultMap> -->
 
+<<<<<<< HEAD
  	<select id="getNewMovie" resultType="TMovie">
         select  mid,mname,score from TMovie where state=1
      </select>
@@ -27,6 +28,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      </select>
       <select id="getMovie" resultType="TMovie">
         select mid,mname,length,area,type,director,score,details,bgdate,sealnum,actor from TMovie where mid=#{mid}
+=======
+ 	<select id="getNewMovie" resultType="Movie">
+        select  mid,mname,score,cover from TMovie where state=1
+     </select>
+     <select id="getFutureMovie" resultType="Movie">
+        select  mid,mname,director,length,actor,bgdate,cover from TMovie where state=2
+     </select>
+      <select id="getMovie" resultType="Movie">
+        select mid,mname,length,area,type,director,score,details,bgdate,sealnum,actor,cover from TMovie where mid=#{mid}
+     </select>
+     <select id="getAllNewMovie" resultType="Movie">
+        select  * from TMovie where state=1
+     </select>
+     <select id="getAllFutureMovie" resultType="Movie">
+        select  *  from TMovie where state=2
+>>>>>>> 89e31252e4c79e7e83a9ed236b42f93ab845d276
      </select>
      
     

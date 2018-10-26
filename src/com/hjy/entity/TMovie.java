@@ -16,6 +16,17 @@ public class TMovie {
 	private Date bgdate;
 	private int sealnumber;
 	private String actor;
+<<<<<<< HEAD:src/com/hjy/entity/TMovie.java
+=======
+	private String cover;
+	
+	public String getCover() {
+		return cover;
+	}
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
+>>>>>>> 89e31252e4c79e7e83a9ed236b42f93ab845d276:src/com/hjy/entity/Movie.java
 	public String getMid() {
 		return mid;
 	}

@@ -18,7 +18,7 @@ public class MovieDao{
 	@Autowired
 	private IMovieMapper movieMapper;
 	/**
-	 * 查询最新上映影片
+	 * 查询部分最新上映影片
 	 * @return
 	 * @throws Exception
 	 */
@@ -26,7 +26,7 @@ public class MovieDao{
 		return movieMapper.getNewMovie();
 	}
 	/**
-	 * 查询即将上映影片
+	 * 查询部分即将上映影片
 	 * @return
 	 * @throws Exception
 	 */
@@ -43,6 +43,7 @@ public class MovieDao{
 		return movieMapper.getMovie(mid);
 	}
 	
+<<<<<<< HEAD
 	/**
 	 * 画廊
 	 * @return
@@ -74,4 +75,23 @@ public class MovieDao{
 	
 	
 	
+=======
+	
+	/**
+	 * 查询全部最新上映影片
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Movie> getAllNewMovie() throws Exception{
+		return movieMapper.getAllNewMovie();
+	}
+	/**
+	 * 查询全部即将上映影片
+	 * @return
+	 * @throws Exception
+	 */
+	public List<Movie> getAllFutureMovie() throws Exception{
+		return movieMapper.getAllFutureMovie();
+	}
+>>>>>>> 89e31252e4c79e7e83a9ed236b42f93ab845d276
 }
