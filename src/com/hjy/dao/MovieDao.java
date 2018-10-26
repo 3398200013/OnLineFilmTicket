@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.hjy.dao.batis.IMovieMapper;
 import com.hjy.entity.Movie;
+import com.hjy.entity.TActor;
 
 
 
@@ -31,6 +32,7 @@ public class MovieDao{
 	public List<Movie> getFutureMovie() throws Exception{
 		return movieMapper.getFutureMovie();
 	}
+	
 	/**
 	 * 查询影片详细信息
 	 * @param mid
@@ -39,6 +41,15 @@ public class MovieDao{
 	 */
 	public Movie getMovie(String mid) throws Exception{
 		return movieMapper.getMovie(mid);
+	}
+	/**
+	 * 查询影片的演员
+	 * @param mid
+	 * @return
+	 * @throws Exception
+	 */
+	public List<TActor> getActor(String mid) throws Exception{
+		return movieMapper.getActor(mid);
 	}
 	
 	

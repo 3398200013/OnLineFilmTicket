@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hjy.biz.MovieBiz;
 import com.hjy.entity.Movie;
+import com.hjy.entity.TActor;
 import com.icss.util.Log;
 
 
@@ -43,14 +44,17 @@ public class MovieAction {
 	public String getMovie(String mid,HttpSession session,Model model){
 		String strRet;
 		Movie movie = null;
+		List<TActor> actors = null;
 		try {
 			movie = moviebiz.getMovie(mid);
+			actors = moviebiz.getActor(mid);
 		} catch (Exception e) {
 			Log.logger.error(e.getMessage(),e);
 			model.addAttribute("msg", "网络异常，请和管理员联系");
 			strRet = "/error/error.jsp";
 		}
 		session.setAttribute("movie", movie);
+		model.addAttribute("actors", actors);
 		strRet="main/deatails.jsp";
 		return strRet;	
 	}

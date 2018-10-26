@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.hjy.dao.MovieDao;
 import com.hjy.entity.Movie;
+import com.hjy.entity.TActor;
 
 @Service("movieBiz")
 @Transactional(readOnly = true)
@@ -38,6 +39,15 @@ public class MovieBiz {
 	 */
 	public Movie getMovie(String mid) throws Exception{
 		return movieDao.getMovie(mid);
+	}
+	/**
+	 * 查询影片全部演员
+	 * @param mid
+	 * @return
+	 * @throws Exception
+	 */
+	public List<TActor> getActor(String mid) throws Exception{
+		return movieDao.getActor(mid);
 	}
 	
 	/**

@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> 
 <%
 	String path = request.getContextPath();
@@ -138,42 +139,17 @@
 				更多 <i class="iconfont icon-svg02"></i>
 			</div>
 			<div class="actor_content">
+			<c:forEach items="${actors}" var="actor">
 				<div class="actors">
-					<img src="img/actor1.png" />
-					<h1>奥利奥尔.保罗</h1>
+					<img src="${actor.picurl}" />
+					<h1>${actor.aname}</h1>
 					<h2>
-						饰：<span class="actorby"></span>
+						饰：<span class="actorby">${actor.atoname}</span>
 					</h2>
 				</div>
-				<div class="actors">
-					<img src="img/actor2.png" />
-					<h1>马里奥.卡萨斯</h1>
-					<h2>
-						饰：<span class="actorby">Adrián Doria</span>
-					</h2>
-				</div>
-				<div class="actors">
-					<img src="img/actor3.png" />
-					<h1>AnaWagener</h1>
-					<h2>
-						饰：<span class="actorby">Virginia Goodman</span>
-					</h2>
-				</div>
-				<div class="actors">
-					<img src="img/actor4.png" />
-					<h1>何塞.拉罗那多</h1>
-					<h2>
-						饰：<span class="actorby">Tomás Garrido</span>
-					</h2>
-				</div>
-				<div class="actors">
-					<img src="img/actor5.png" />
-					<h1>芭芭拉.蓝妮</h1>
-					<h2>
-						饰：<span class="actorby">Laura Vidal</span>
-					</h2>
-				</div>
-			</div>
+			</c:forEach>
+			
+				
 		</div>
 		<div class="deatails_box comments">
 			<div class="comments_title">热门短评</div>

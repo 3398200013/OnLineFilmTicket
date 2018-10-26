@@ -11,6 +11,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
           <typeAlias alias="TUser" type="com.hjy.entity.TUser"/>
           <typeAlias alias="Movie" type="com.hjy.entity.Movie"/>
+          <typeAlias alias="TActor" type="com.hjy.entity.TActor"/>
     </typeAliases>
 
 	<mappers>
