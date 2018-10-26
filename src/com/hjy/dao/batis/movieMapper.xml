@@ -4,6 +4,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hjy.dao.batis.IMovieMapper">
 
+<<<<<<< HEAD
  	<select id="getNewMovie" resultType="Movie">
         select  mid,mname,score,cover from TMovie where state=1
      </select>
@@ -22,4 +23,65 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      <select id="getAllFutureMovie" resultType="Movie">
         select  *  from TMovie where state=2
      </select>
+=======
+	<!-- <resultMap type="Movie" id="MovieMap"> <result property="mid" column="mid" 
+		jdbcType="VARCHAR"/> <result property="mname" column="mname" jdbcType="VARCHAR"/> 
+		<result property="length" column="length" jdbcType="VARCHAR"/> <result property="area" 
+		column="area" jdbcType="VARCHAR"/> <result property="type" column="type" 
+		jdbcType="VARCHAR"/> <result property="director" column="director" jdbcType="VARCHAR"/> 
+		<result property="score" column="score" jdbcType="NUMBER"/> <result property="state" 
+		column="state" jdbcType="VARCHAR"/> <result property="details" column="details" 
+		jdbcType="VARCHAR"/> <result property="bgdate" column="bjdate" jdbcType="DATE"/> 
+		<result property="sealnum" column="sealnumber" jdbcType="NUMBER"/> <result 
+		property="actor" column="actor" jdbcType="VARCHAR"/> </resultMap> -->
+
+	
+	<select id="getNewMovie" resultType="TMovie">
+		select mid,mname,score,cover from TMovie where state=1
+	</select>
+	
+	<select id="getFutureMovie" resultType="TMovie">
+		select mid,mname,director,length,actor,bgdate,cover from TMovie where
+		state=2
+	</select>
+	
+	<select id="getMovie" resultType="TMovie">
+		select mid,mname,length,area,type,director,score,details,bgdate,sealnum,actor,cover
+		from TMovie where mid=#{mid}
+	</select>
+	
+	<select id="getAllNewMovie" resultType="TMovie">
+		select * from TMovie where state=1
+	</select>
+	
+	<select id="getAllFutureMovie" resultType="TMovie">
+		select * from TMovie where state=2
+	</select>
+
+
+
+
+	<select id="getAllGrally" resultType="TGrally">
+		select * from TGrally
+	</select>
+	
+	<select id="getNewestMovie" resultType="TMovie">
+		select
+		mid,mname,length,area,type,director,
+		score,details,bgdate,sealnum,actor,cover,state from(select rownum rw,tm.* from
+		((select * from TMovie where bgdate &lt; #{indate} order by bgdate desc )tm))
+		where rw>=1 and rw &lt; 5
+	</select>
+	
+	<select id="getsyMovie" resultType="TMovie">
+		select
+		mid,mname,length,area,type,director,
+		score,details,bgdate,sealnum,actor,cover,state from(select rownum rw,tm.* from
+		((select * from TMovie where bgdate > #{indate} order by bgdate asc )tm))
+		where rw>=1 and rw &lt; 5
+	</select>
+
+
+
+>>>>>>> a8fa99e60d39e9dd10429fb20728b5af30179d6e
 </mapper>

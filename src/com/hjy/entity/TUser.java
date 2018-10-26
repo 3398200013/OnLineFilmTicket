@@ -7,7 +7,7 @@ public class TUser {
 	private String usertxt;
 	private Integer role;
 	private Integer balance;
-	private byte[] userpic;
+	private String userpic;
 	
 	public String getUname() {
 		return uname;
@@ -45,10 +45,10 @@ public class TUser {
 	public void setBalance(Integer balance) {
 		this.balance = balance;
 	}
-	public byte[] getUserpic() {
+	public String getUserpic() {
 		return userpic;
 	}
-	public void setUserpic(byte[] userpic) {
+	public void setUserpic(String userpic) {
 		this.userpic = userpic;
 	}
 }

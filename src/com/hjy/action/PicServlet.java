@@ -17,7 +17,7 @@ import com.jspsmart.upload.SmartUploadException;
 @WebServlet(urlPatterns="/PicServlet")
 public class PicServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+	
    
     public PicServlet() {
         super();
@@ -47,8 +47,15 @@ public class PicServlet extends HttpServlet {
 			File file = smu.getFiles().getFile(0);
 			String fileExt = file.getFileExt();//扩展名
 			String uname = user.getUname();
-			java.io.File realfile = new java.io.File(SysConfig.getImgPath() + "/" + uname +".jpg");
-			file.saveAs(realfile.toString());			
+			
+			java.io.File realfile = new java.io.File(SysConfig.getImgPath() + "/"+uname+"."+file.getFileExt());
+			file.saveAs(realfile.toString());	
+			
+			String picUrl = SysConfig.getImgServerUrl() + "/user/"+uname+"."+file.getFileExt();
+			user.setUserpic(picUrl);
+			
+			request.getSession().setAttribute("user", user);
+			request.getRequestDispatcher("picSave.do").forward(request, response);
 		//	response.getWriter().write("{\"success\":1,\"messgae\":\"upload successful\",\"url\":\""+SysConfig.getImgServerUrl() + "/" + file.getFilePathName()+"\"}");		
 		} catch (SmartUploadException e) {
 			

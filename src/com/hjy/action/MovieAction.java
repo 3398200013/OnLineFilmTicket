@@ -8,11 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hjy.biz.MovieBiz;
+<<<<<<< HEAD
 import com.hjy.entity.Movie;
 import com.hjy.entity.TActor;
+=======
+import com.hjy.entity.TMovie;
+>>>>>>> a8fa99e60d39e9dd10429fb20728b5af30179d6e
 import com.icss.util.Log;
 
 
@@ -23,10 +26,10 @@ public class MovieAction {
 	private MovieBiz moviebiz;
 	
 	@RequestMapping("/movies")
-	public String getMovies(Model model){
+	public String getMovies(Model model,String type){
 		String strRet;
-		List<Movie> newlist = null;
-		List<Movie> futurelist = null;
+		List<TMovie> newlist = null;
+		List<TMovie> futurelist = null;
 		try {
 			newlist = moviebiz.getNewMovie();
 			futurelist = moviebiz.getFutureMovie();
@@ -35,6 +38,7 @@ public class MovieAction {
 			model.addAttribute("msg", "网络异常，请和管理员联系");
 			strRet = "/error/error.jsp";
 		}
+		model.addAttribute("type", type);
 		model.addAttribute("newlist", newlist);
 		model.addAttribute("futurelist", futurelist);
 		strRet = "main/showList.jsp";
@@ -43,8 +47,12 @@ public class MovieAction {
 	@RequestMapping("/movie")
 	public String getMovie(String mid,HttpSession session,Model model){
 		String strRet;
+<<<<<<< HEAD
 		Movie movie = null;
 		List<TActor> actors = null;
+=======
+		TMovie movie = null;
+>>>>>>> a8fa99e60d39e9dd10429fb20728b5af30179d6e
 		try {
 			movie = moviebiz.getMovie(mid);
 			actors = moviebiz.getActor(mid);
@@ -62,7 +70,7 @@ public class MovieAction {
 	@RequestMapping("/allnewmovie")
 	public String getAllNewMovies(Model model){
 		String strRet;
-		List<Movie> allnewmovie = null;
+		List<TMovie> allnewmovie = null;
 		try {
 			allnewmovie = moviebiz.getAllNewMovie();
 		} catch (Exception e) {
@@ -77,7 +85,7 @@ public class MovieAction {
 	@RequestMapping("/allfuturemovie")
 	public String getAllFutureMovies(Model model){
 		String strRet;
-		List<Movie> allfuturemovie = null;
+		List<TMovie> allfuturemovie = null;
 		try {
 			allfuturemovie = moviebiz.getAllFutureMovie();
 		} catch (Exception e) {

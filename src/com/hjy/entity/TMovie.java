@@ -2,27 +2,21 @@ package com.hjy.entity;
 
 import java.util.Date;
 
-public class Movie {
+public class TMovie {
 	private String mid;
 	private String mname;
 	private String length;
 	private String area;
 	private String type;
 	private String director;
-	private float score;
-	private String state;
+	private double score;
+	private int state;
 	private String details;
+	private String cover;
 	private Date bgdate;
 	private int sealnum;
 	private String actor;
-	private String cover;
-	
-	public String getCover() {
-		return cover;
-	}
-	public void setCover(String cover) {
-		this.cover = cover;
-	}
+
 	public String getMid() {
 		return mid;
 	}
@@ -59,16 +53,16 @@ public class Movie {
 	public void setDirector(String director) {
 		this.director = director;
 	}
-	public float getScore() {
+	public double getScore() {
 		return score;
 	}
-	public void setScore(float score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
-	public String getState() {
+	public int getState() {
 		return state;
 	}
-	public void setState(String state) {
+	public void setState(int state) {
 		this.state = state;
 	}
 	public String getDetails() {
@@ -77,16 +71,16 @@ public class Movie {
 	public void setDetails(String details) {
 		this.details = details;
 	}
-	public String getActor() {
-		return actor;
+	public String getCover() {
+		return cover;
 	}
-	public void setActor(String actor) {
-		this.actor = actor;
+	public void setCover(String cover) {
+		this.cover = cover;
 	}
-	public Date getBgdate() {
-		return bgdate ;
+	public Date getbgdate() {
+		return bgdate;
 	}
-	public void setBgdate(Date bgdate) {
+	public void setbgdate(Date bgdate) {
 		this.bgdate = bgdate;
 	}
 	public int getSealnum() {
@@ -95,5 +89,12 @@ public class Movie {
 	public void setSealnum(int sealnum) {
 		this.sealnum = sealnum;
 	}
+	public String getActor() {
+		return actor;
+	}
+	public void setActor(String actor) {
+		this.actor = actor;
+	}
 	
+
 }

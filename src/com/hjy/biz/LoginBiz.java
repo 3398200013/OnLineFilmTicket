@@ -25,4 +25,15 @@ public class LoginBiz {
 		
 		return loginDao.selectUser(uname, pwd);
 	}
+	
+	/**
+	 * 保存照片
+	 * @param uname
+	 * @param pic
+	 * @return
+	 */
+	public int updatePic(String uname, String userpic){
+		return loginDao.updatePic(uname,userpic);
+	}
+	
 }

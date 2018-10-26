@@ -21,4 +21,15 @@ public class LoginDao {
 	public TUser selectUser(String uname, String pwd){
 		return loginMapper.selectUser(uname,pwd);
 	}
+	
+	/**
+	 * 保存照片
+	 * @param uname
+	 * @param pic
+	 * @return
+	 */
+	public int updatePic(String uname, String userpic){
+		int n = loginMapper.updatePic(uname,userpic);
+		return n;
+	}
 }

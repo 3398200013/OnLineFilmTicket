@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -22,26 +22,46 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <link rel="shortcut icon" href="img/logo.ico" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
-<link rel="stylesheet" type="text/css" href="css/styleshowlist.css" />
 <link rel="stylesheet" type="text/css" href="fonts/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="css/picstyle.css" />
 <script type="text/javascript" src="js/login.js"></script>
 <script type="text/javascript" src="js/cityAZ.js"></script>
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/JavaScript.js"></script>
+<script type="text/javascript" src="js/jquery.easyui.min.js"></script>
 <script type="text/javascript">
+
+ function submitPic(){
+alert("s")
+ 	$('#edittou').form({    
+    url:'<%=basePath%>PicServlet',    
+    onSubmit: function(){    
+    },    
+    success:function(data){    
+    }    
+});     
+$('#edittou').submit();  
+ }
+
 
 $(function(){
 	showCitys();
 	 optionAdd.onclick = function (e) {
-	 var optionAdd = document.getElementById("optionAdd");
+	var optionAdd = document.getElementById("optionAdd");
     var optionAdd = optionAdd.querySelectorAll('a');
     var e = e || window.event;
     var target = e.target || e.srcElement;
     if (target && target.nodeName == 'A') {
     var cityP = document.getElementById("cityP");
         cityP.innerText = target.innerText;
+       
+        $.ajax({
+			type : "get",
+			url : "<%=basePath%>setCity.do?city="+target.innerText,
+			success : function(msg) {}
+		});
     }
    
 } 
@@ -114,39 +134,40 @@ var optionAdd = document.getElementById("optionAdd");
 	<!--头部nav设置-->
 	<div class="nav">
 		<div class="nav_left">
-		
+
 			<div class="nav_left_title">
 				<c:if test="${user==null}">
 					<a href="<%=basePath%>Login.jsp">登录</a>
 					<span>|</span>
 					<a href="<%=basePath%>Login.jsp?zhuce=a">注册</a>
 				</c:if>
-				
-				 <c:if test="${user!=null}">
-					
+
+				<c:if test="${user!=null}">
+
 					<div class="userPic">
-						<img src="GetPicSvl?uname=${user.uname}" />
+						<img src="${user.userpic}" />
 					</div>
 					<p id="usernameOne">${user.uname}</p>
-				</c:if> 
+				</c:if>
 			</div>
-			
-			<div class="selectAdd" >
+
+			<div class="selectAdd">
 				<p>
-				<span class="iconfont">&#xe632;</span>
-					<a id='cityP'>北京</a>
+					<span class="iconfont">&#xe632;</span> 
+					<a id='cityP'>
+						<c:if test="${city==null}">北京</c:if>
+						<c:if test="${city!=null}">${city}</c:if>
+					</a> 
 					<span class="arrow iconfont">&#xe625;</span>
 				</p>
-				
-				<div class="optionAddBox" >
+
+				<div class="optionAddBox">
 					<div class="triangle"></div>
-					<div class="optionAdd" id="optionAdd">
-					
-					</div>
+					<div class="optionAdd" id="optionAdd"></div>
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="nav_right">
 			<div class="customer selectAdd">
 				<p>
@@ -170,7 +191,7 @@ var optionAdd = document.getElementById("optionAdd");
 					</div>
 				</div>
 			</div>
-		<c:if test="${user!=null}">
+			<c:if test="${user!=null}">
 				<div class="myOrder selectAdd">
 					<p>
 						修改信息<span class="arrow iconfont">&#xe625;</span>
@@ -192,12 +213,12 @@ var optionAdd = document.getElementById("optionAdd");
 											</div>
 
 											<div id="dialogBg"></div>
-						
+
 											<div id="tochangename" class="animated">
-											
+
 												<img class="dialogIco" width="50" height="50"
-													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
-													
+													src="${user.userpic}" alt="" />
+
 												<div class="dialogTop">
 													<a class="claseDialogBtn">取消</a>
 												</div>
@@ -215,7 +236,7 @@ var optionAdd = document.getElementById("optionAdd");
 											</div>
 											<div id="tochangepwd" class="animated">
 												<img class="dialogIco" width="50" height="50"
-													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
+													src="${user.userpic}" alt="" />
 												<div class="dialogTop">
 													<a href="javascript:;" class="claseDialogBtn">取消</a>
 												</div>
@@ -238,24 +259,24 @@ var optionAdd = document.getElementById("optionAdd");
 											</div>
 											<div id="tochangeimg" class="animated">
 												<img class="dialogIco" width="50" height="50"
-													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
+													src="${user.userpic}" alt="" />
 												<div class="dialogTop">
 													<a href="javascript:;" class="claseDialogBtn">取消</a>
 												</div>
-												<form action="<%=basePath%>PicServlet" method="post" id="editForm" enctype="multipart/form-data">
+												<form action="<%=basePath%>PicServlet" method="post"
+													id="edittou" enctype="multipart/form-data">
 													<ul class="editInfos">
 														<li><label><font color="#ff0000">修改头像*
-															</font>
-															</label></li>
-															<li><input type="file" name="file" id="file" width="100%" value="file"
-																 /></li>
-														<li><input type="submit" value="提交" class="submitBtn" /></li>
+															</font> </label></li>
+														<li><input type="file" name="file" id="file" 
+															 value="file" /></li>
+														<li><input type="submit" value="提交"  class="submitBtn" /></li>
 													</ul>
 												</form>
 											</div>
 											<div id="tochangetxt" class="animated">
 												<img class="dialogIco" width="50" height="50" id="dialogIco"
-													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
+													src="${user.userpic}" alt="" />
 												<div class="dialogTop">
 													<a href="javascript:;" class="claseDialogBtn">取消</a>
 												</div>
@@ -273,7 +294,7 @@ var optionAdd = document.getElementById("optionAdd");
 											</div>
 											<div id="tochangebalance" class="animated">
 												<img class="dialogIco" width="50" height="50"
-													src="<%=basePath%>GetPicSvl?uname=${user.uname}" alt="" />
+													src="${user.userpic}" alt="" />
 												<div class="dialogTop">
 													<a href="javascript:;" class="claseDialogBtn">取消</a>
 												</div>
@@ -306,7 +327,7 @@ var optionAdd = document.getElementById("optionAdd");
 							<div class="myIntegralBoxPage">
 								<div class="textBox">
 									<h3 id="usernameTwo">${user.uname}</h3>
-									
+
 									<p>
 										绑定手机 : <span>${user.tel}</span>
 									</p>
@@ -318,10 +339,9 @@ var optionAdd = document.getElementById("optionAdd");
 									</h5>
 								</div>
 								<div class="imageBox">
-									<img src="img/logo.png" />
+									<img src="${user.userpic}" />
 								</div>
-								<a href="outLogin.do">退出登录</a> <a
-									href="outLogin.do" id="logout"></a>
+								<a href="outLogin.do">退出登录</a> <a href="outLogin.do" id="logout"></a>
 							</div>
 						</div>
 					</div>
@@ -329,8 +349,26 @@ var optionAdd = document.getElementById("optionAdd");
 			</c:if>
 		</div>
 	</div>
-
+	<!--search搜索栏-->
+	<div class="search">
+		<div class="loginImg">
+			<img src="img/logo.png" />
+		</div>
+		<div class="centerTitle">
+			<ul id="titleul">
+				<li id="shouye" class='<c:if test="${type!=2}">active</c:if>'><a href="<%=basePath%>main.do" >首页</a></li>
+				<li id="dianying" class='<c:if test="${type==2}">active</c:if>'><a href="<%=basePath%>movies.do?type=2">电影</a></li>
+			</ul>
+		</div>
+		<form>
+			<input type="text" name="" id="" class="textSearch"
+				placeholder="请输入要搜索内容" /> <input type="submit" name="" id=""
+				class="subSearch iconfont" value="&#xe6ab;" />
+		</form>
+	</div>
 	<script type="text/javascript">
+	
+	
 		var span = document.getElementById("examinuname");
 		var w,
 			h,
