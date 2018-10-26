@@ -19,13 +19,33 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="actor" column="actor" jdbcType="VARCHAR"/>
 	</resultMap> -->
 
- 	<select id="getNewMovie" resultType="Movie">
+ 	<select id="getNewMovie" resultType="TMovie">
         select  mid,mname,score from TMovie where state=1
      </select>
-     <select id="getFutureMovie" resultType="Movie">
+     <select id="getFutureMovie" resultType="TMovie">
         select  mid,mname,director,length,actor,bgdate from TMovie where state=2
      </select>
-      <select id="getMovie" resultType="Movie">
+      <select id="getMovie" resultType="TMovie">
         select mid,mname,length,area,type,director,score,details,bgdate,sealnum,actor from TMovie where mid=#{mid}
      </select>
+     
+    
+     
+     
+	<select id="getAllGrally" resultType="TGrally">
+		select * from TGrally
+	</select>
+	<select id="getNewestMovie" resultType="TMovie">
+		select  mid,mname,length,area,type,director, score,details,bgdate,sealnum,actor,cover,state from(select rownum rw ,tm.* from 
+		((select * from TMovie where bgdate &lt; #{indate} order by bgdate desc )tm))
+		 where rw>=1 and rw &lt; 5
+	</select>
+	<select id="getsyMovie" resultType="TMovie">
+		select  mid,mname,length,area,type,director, score,details,bgdate,sealnum,actor,cover,state from(select rownum rw ,tm.* from 
+		((select * from TMovie where bgdate > #{indate} order by bgdate asc )tm))
+		 where rw>=1 and rw &lt; 5
+	</select>
+     
+     
+    
 </mapper>

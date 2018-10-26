@@ -1,22 +1,21 @@
 package com.hjy.entity;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Movie {
+public class TMovie {
 	private String mid;
 	private String mname;
 	private String length;
 	private String area;
 	private String type;
 	private String director;
-	private float score;
-	private String state;
-	private String details;
+	private double score;
+	private int state;
+	private String detials;
+	private String cover;
 	private Date bgdate;
-	private int sealnum;
+	private int sealnumber;
 	private String actor;
-	
 	public String getMid() {
 		return mid;
 	}
@@ -53,23 +52,41 @@ public class Movie {
 	public void setDirector(String director) {
 		this.director = director;
 	}
-	public float getScore() {
+	public double getScore() {
 		return score;
 	}
-	public void setScore(float score) {
+	public void setScore(double score) {
 		this.score = score;
 	}
-	public String getState() {
+	public int getState() {
 		return state;
 	}
-	public void setState(String state) {
+	public void setState(int state) {
 		this.state = state;
 	}
-	public String getDetails() {
-		return details;
+	public String getDetials() {
+		return detials;
 	}
-	public void setDetails(String details) {
-		this.details = details;
+	public void setDetials(String detials) {
+		this.detials = detials;
+	}
+	public String getCover() {
+		return cover;
+	}
+	public void setCover(String cover) {
+		this.cover = cover;
+	}
+	public Date getbgdate() {
+		return bgdate;
+	}
+	public void setbgdate(Date bgdate) {
+		this.bgdate = bgdate;
+	}
+	public int getSealnumber() {
+		return sealnumber;
+	}
+	public void setSealnumber(int sealnumber) {
+		this.sealnumber = sealnumber;
 	}
 	public String getActor() {
 		return actor;
@@ -77,17 +94,6 @@ public class Movie {
 	public void setActor(String actor) {
 		this.actor = actor;
 	}
-	public Date getBgdate() {
-		return bgdate ;
-	}
-	public void setBgdate(Date bgdate) {
-		this.bgdate = bgdate;
-	}
-	public int getSealnum() {
-		return sealnum;
-	}
-	public void setSealnum(int sealnum) {
-		this.sealnum = sealnum;
-	}
 	
+
 }

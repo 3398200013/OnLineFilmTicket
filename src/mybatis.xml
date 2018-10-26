@@ -10,7 +10,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	
 	<typeAliases>
           <typeAlias alias="TUser" type="com.hjy.entity.TUser"/>
-          <typeAlias alias="Movie" type="com.hjy.entity.Movie"/>
+          <typeAlias alias="TMovie" type="com.hjy.entity.TMovie"/>
+          <typeAlias alias="TGrally" type="com.hjy.entity.TGrally"/>
     </typeAliases>
 
 	<mappers>

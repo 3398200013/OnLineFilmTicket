@@ -52,6 +52,7 @@ public class GetPicSvl extends HttpServlet {
 						// 设置响应类型
 						su.setContentDisposition(null);
 						String filePath = SysConfig.getImgPath();
+						
 						su.downloadFile(filePath +"\\"+uname +".jpg");
 						return;
 					} catch (Exception e1) {

@@ -7,4 +7,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="selectUser" resultType="TUser">
 		select * from TUser where uname=#{uname} and pwd=#{pwd}
 	</select>
+	<update id="updatePic">
+		update tuser set userpic=#{userpic} where uname=#{uname}
+	</update>
+	
 </mapper>

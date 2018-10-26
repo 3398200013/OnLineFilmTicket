@@ -1,5 +1,6 @@
 package com.hjy.biz;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,7 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hjy.dao.MovieDao;
-import com.hjy.entity.Movie;
+import com.hjy.entity.TGrally;
+import com.hjy.entity.TMovie;
 
 @Service("movieBiz")
 @Transactional(readOnly = true)
@@ -19,7 +21,7 @@ public class MovieBiz {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Movie> getNewMovie() throws Exception{
+	public List<TMovie> getNewMovie() throws Exception{
 		return movieDao.getNewMovie();
 	}
 	/**
@@ -27,7 +29,7 @@ public class MovieBiz {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<Movie> getFutureMovie() throws Exception{
+	public List<TMovie> getFutureMovie() throws Exception{
 		return movieDao.getFutureMovie();
 	}
 	/**
@@ -36,7 +38,36 @@ public class MovieBiz {
 	 * @return
 	 * @throws Exception
 	 */
-	public Movie getMovie(String mid) throws Exception{
+	public TMovie getMovie(String mid) throws Exception{
 		return movieDao.getMovie(mid);
+	}
+	
+	/**
+	 * 画廊
+	 * @return
+	 * @throws Exception
+	 */
+	public List<TGrally> getAllGrally()throws Exception{
+		return movieDao.getAllGrally();
+	}
+	/**
+	 * 最新上映
+	 * @param indate
+	 * @return
+	 * @throws Exception
+	 */
+	public List<TMovie> getNewestMovie(Date indate)throws Exception{
+		
+		return movieDao.getNewestMovie(indate);
+	}
+	/**
+	 * 即将上映
+	 * @param indate
+	 * @return
+	 * @throws Exception
+	 */
+	public List<TMovie> getsyMovie(Date indate) throws Exception{
+		
+		return movieDao.getsyMovie(indate);
 	}
 }

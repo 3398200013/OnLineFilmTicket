@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
 
-   <imgPath>d:\img</imgPath>
+   <imgPath>d:\img\user</imgPath>
    <imgServerUrl>http://127.0.0.1:8080/img</imgServerUrl>
 
 </root>
