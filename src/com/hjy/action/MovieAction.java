@@ -22,7 +22,7 @@ public class MovieAction {
 	private MovieBiz moviebiz;
 
 	@RequestMapping("/movies")
-	public String getMovies(Model model, String type) {
+	public String getMovies(Model model, String mid) {
 		String strRet;
 		List<TMovie> newlist = null;
 		List<TMovie> futurelist = null;
@@ -34,7 +34,7 @@ public class MovieAction {
 			model.addAttribute("msg", "网络异常，请和管理员联系");
 			strRet = "/error/error.jsp";
 		}
-		model.addAttribute("type", type);
+		model.addAttribute("mid", mid);
 		model.addAttribute("newlist", newlist);
 		model.addAttribute("futurelist", futurelist);
 		strRet = "main/showList.jsp";
