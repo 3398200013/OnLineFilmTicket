@@ -356,18 +356,40 @@ var optionAdd = document.getElementById("optionAdd");
 		</div>
 		<div class="centerTitle">
 			<ul id="titleul">
-				<li id="shouye" class='<c:if test="${type!=2}">active</c:if>'><a href="<%=basePath%>main.do" >首页</a></li>
-				<li id="dianying" class='<c:if test="${type==2}">active</c:if>'><a href="<%=basePath%>movies.do?type=2">电影</a></li>
+				<li id="shouye" class=''><a href="<%=basePath%>main.do" >首页</a></li>
+				<li id="dianying" class=''><a href="<%=basePath%>movies.do?mid=1">电影</a></li>
 			</ul>
 		</div>
-		<form>
-			<input type="text" name="" id="" class="textSearch"
+		<form action="getMovie.do" method="get">
+			<input type="text" name="moviename" id="" class="textSearch"
 				placeholder="请输入要搜索内容" /> <input type="submit" name="" id=""
 				class="subSearch iconfont" value="&#xe6ab;" />
 		</form>
 	</div>
 	<script type="text/javascript">
 	
+		$(function() {
+			
+			var mid =GetQueryString('mid');
+			//alert(mid);
+				if(mid == null){
+					$("#shouye").addClass('active');
+					$("#dianying").removeClass('active');
+				}else{
+					$("#dianying").addClass('active');
+					$("#shouye").removeClass('active');
+				}
+				
+			}); 
+		
+		function GetQueryString(name)
+		{
+		     var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+		     var r = window.location.search.substr(1).match(reg);//search,查询？后面的参数，并匹配正则
+		     if(r!=null)return  unescape(r[2]); return null;
+		}
+		
+
 	
 		var span = document.getElementById("examinuname");
 		var w,

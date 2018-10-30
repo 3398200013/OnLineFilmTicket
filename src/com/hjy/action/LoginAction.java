@@ -1,14 +1,18 @@
 package com.hjy.action;
 
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.hjy.biz.LoginBiz;
+import com.hjy.entity.TMovie;
 import com.hjy.entity.TUser;
 
 @Controller
@@ -60,5 +64,14 @@ public class LoginAction {
 	public void setCity(String city,HttpSession session){
 		session.setAttribute("city", city);
 		return;
+	}
+	
+	@RequestMapping("/getMovie")
+	public String selectMovie(String moviename ,Model model){
+		
+		List<TMovie> allnewmovie = loginBiz.selectNameMovie(moviename);
+		model.addAttribute("allnewmovie", allnewmovie);
+		return "main/allNewMovie.jsp";
+		
 	}
 }

@@ -49,11 +49,11 @@
 			<div class="hotNews">
 				<div class="hotNewsTitle">
 					<h1>最新上映</h1>
-					<a>MORE&nbsp;&nbsp;>></a>
+					<a href="allnewmovie.do">更多&nbsp;&nbsp;>></a>
 				</div>
 				<ul class="hotNewsUl">
 				<c:forEach var="movie" items="${movies}">
-					<li><a href="/DeatailSvl?mid=${movie.mid}"> <img src="${movie.cover}" />
+					<li><a href="movie.do?mid=${movie.mid}"> <img src="${movie.cover}" />
 							<p>${movie.mname}</p>
 							<p>
 								<i class="spanOne">${movie.score}</i>
@@ -94,11 +94,11 @@
 			<div class="hotMovie">
 				<div class="hotNewsTitle">
 					<h1>即将上映</h1>
-					<a>MORE&nbsp;&nbsp;>></a>
+					<a href="allfuturemovie.do">更多&nbsp;&nbsp;>></a>
 				</div>
 				<ul class="hotMovieUl">
 					<c:forEach var="symovie" items="${symovies}">
-					<li><a href="/DeatailSvl?mid=${symovie.mid}">
+					<li><a href="movie.do?mid=${symovie.mid}">
 							<div class="hotMovieBox">
 								<div class="hotMovieImg">
 									<img src="${symovie.cover}" />
