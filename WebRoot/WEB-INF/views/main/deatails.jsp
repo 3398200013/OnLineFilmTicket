@@ -68,14 +68,12 @@
 						<i class="iconfont hope_write icon-taoxin1"></i>
 						<p class="hope_write">想看</p>
 					</div>
-					<c:if test="${CommentState==0}">
 						<a class="cd-popup-trigger">
 							<div id="button_score">
 								<span class="star"></span>
 								<p id="score_text">评分</p>
 							</div>
 						</a>
-					</c:if>
 					<!-- <c:if test="${CommentState==3}">
 						<a class="comment_yk">
 							<div id="button_score">
@@ -94,10 +92,9 @@
 					</c:if> -->
 					
 
-					<c:if test="${movie.state==1}">
-						<a href="<%=basePath%>SelectCinemaSvl?mid=${movie.mid}"><div
+					
+						<a href="<%=basePath%>cimena.do"><div
 								class="button_buy">立即购票</div></a>
-					</c:if>
 				</div>
 				<div class="ppt_text_3">
 					<h1>累计票房</h1>
@@ -156,7 +153,6 @@
 			<div class="comments_title">热门短评</div>
 			<div id="talk_about">发表评论</div>
 			<ul class="comments_content">
-				<c:forEach var="comments" items="${comments}">
 					<li class="comments_li">
 						<div class="users">
 							<div class="user_pic">
@@ -169,7 +165,6 @@
 						</div>
 						<div class="users_comments_content">我也不知道好不好看</div>
 					</li>
-				</c:forEach>
 			</ul>
 		</div>
 	</div>
