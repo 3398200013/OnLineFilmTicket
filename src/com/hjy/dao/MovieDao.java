@@ -7,13 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hjy.dao.batis.IMovieMapper;
-<<<<<<< HEAD
-import com.hjy.entity.Movie;
 import com.hjy.entity.TActor;
-=======
 import com.hjy.entity.TGrally;
 import com.hjy.entity.TMovie;
->>>>>>> a8fa99e60d39e9dd10429fb20728b5af30179d6e
+
 
 
 

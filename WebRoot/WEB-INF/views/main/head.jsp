@@ -22,7 +22,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
 <link rel="shortcut icon" href="img/logo.ico" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
+
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="fonts/iconfont.css" />
 <link rel="stylesheet" type="text/css" href="css/picstyle.css" />

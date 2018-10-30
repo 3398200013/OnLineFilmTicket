@@ -8,13 +8,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.hjy.dao.MovieDao;
-<<<<<<< HEAD
-import com.hjy.entity.Movie;
 import com.hjy.entity.TActor;
-=======
 import com.hjy.entity.TGrally;
 import com.hjy.entity.TMovie;
->>>>>>> a8fa99e60d39e9dd10429fb20728b5af30179d6e
+
 
 @Service("movieBiz")
 @Transactional(readOnly = true)

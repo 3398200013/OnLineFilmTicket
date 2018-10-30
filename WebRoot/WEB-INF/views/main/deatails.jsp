@@ -22,6 +22,7 @@
 <link rel="stylesheet" type="text/css" href="css/ppt.css" />
 <link rel="stylesheet" type="text/css" href="fonts/iconfont.css">
 <link rel="stylesheet" type="text/css" href="css/deatails.css" />
+<link rel="stylesheet" type="text/css" href="css/styleshowlist.css" />
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
 <meta content="width=device-width; initial-scale=1; maximum-scale=1"
 	name="viewport">
@@ -149,7 +150,7 @@
 				</div>
 			</c:forEach>
 			
-				
+		</div>		
 		</div>
 		<div class="deatails_box comments">
 			<div class="comments_title">热门短评</div>
