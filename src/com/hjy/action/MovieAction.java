@@ -14,8 +14,6 @@ import com.hjy.entity.TActor;
 import com.hjy.entity.TMovie;
 import com.icss.util.Log;
 
-
-
 @Controller
 public class MovieAction {
 	@Autowired

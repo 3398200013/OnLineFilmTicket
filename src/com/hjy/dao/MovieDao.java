@@ -11,9 +11,6 @@ import com.hjy.entity.TActor;
 import com.hjy.entity.TGrally;
 import com.hjy.entity.TMovie;
 
-
-
-
 @Repository("movieDao")
 public class MovieDao{
 
