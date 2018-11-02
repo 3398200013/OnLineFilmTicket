@@ -12,7 +12,7 @@ public class SeatAction {
 	@Autowired
 	private MovieBiz movieBiz;
 	
-	@RequestMapping("/selectSeat.do")
+	@RequestMapping("/selectSeat")
 	public String selectSeat(){
 		return "/main/SelectSeat.jsp";
 	}

@@ -11,91 +11,118 @@ import com.hjy.dao.MovieDao;
 import com.hjy.entity.TActor;
 import com.hjy.entity.TGrally;
 import com.hjy.entity.TMovie;
-
+import com.hjy.entity.TSeat;
 
 @Service("movieBiz")
 @Transactional(readOnly = true)
 public class MovieBiz {
 	@Autowired
 	private MovieDao movieDao;
+
 	/**
 	 * 查询最新上映影片
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public List<TMovie> getNewMovie() throws Exception{
+	public List<TMovie> getNewMovie() throws Exception {
 		return movieDao.getNewMovie();
 	}
+
 	/**
 	 * 查询即将上映影片
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public List<TMovie> getFutureMovie() throws Exception{
+	public List<TMovie> getFutureMovie() throws Exception {
 		return movieDao.getFutureMovie();
 	}
+
 	/**
 	 * 查询影片详细信息
+	 * 
 	 * @param mid
 	 * @return
 	 * @throws Exception
 	 */
-	public TMovie getMovie(String mid) throws Exception{
+	public TMovie getMovie(String mid) throws Exception {
 		return movieDao.getMovie(mid);
 	}
+
 	/**
 	 * 查询影片全部演员
+	 * 
 	 * @param mid
 	 * @return
 	 * @throws Exception
 	 */
-	public List<TActor> getActor(String mid) throws Exception{
+	public List<TActor> getActor(String mid) throws Exception {
 		return movieDao.getActor(mid);
 	}
-	
+
 	/**
 	 * 画廊
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public List<TGrally> getAllGrally()throws Exception{
+	public List<TGrally> getAllGrally() throws Exception {
 		return movieDao.getAllGrally();
 	}
+
 	/**
 	 * 最新上映
+	 * 
 	 * @param indate
 	 * @return
 	 * @throws Exception
 	 */
-	public List<TMovie> getNewestMovie(Date indate)throws Exception{
-		
+	public List<TMovie> getNewestMovie(Date indate) throws Exception {
+
 		return movieDao.getNewestMovie(indate);
 	}
+
 	/**
 	 * 即将上映
+	 * 
 	 * @param indate
 	 * @return
 	 * @throws Exception
 	 */
-	public List<TMovie> getsyMovie(Date indate) throws Exception{
-		
+	public List<TMovie> getsyMovie(Date indate) throws Exception {
+
 		return movieDao.getsyMovie(indate);
 	}
-	
-	/** 查询全部最新上映影片
+
+	/**
+	 * 查询全部最新上映影片
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public List<TMovie> getAllNewMovie() throws Exception{
+	public List<TMovie> getAllNewMovie() throws Exception {
 		return movieDao.getAllNewMovie();
 	}
+
 	/**
 	 * 查询全部即将上映影片
+	 * 
 	 * @return
 	 * @throws Exception
 	 */
-	public List<TMovie> getAllFutureMovie() throws Exception{
+	public List<TMovie> getAllFutureMovie() throws Exception {
 		return movieDao.getAllFutureMovie();
 
+	}
+
+	/**
+	 * 查询座位信息
+	 * 
+	 * @param hno
+	 * @return
+	 */
+	public List<TSeat> getSeatsMovie(String hno) {
+		return movieDao.getSeatsMovie(hno);
 	}
 }

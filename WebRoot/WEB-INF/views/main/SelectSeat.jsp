@@ -45,6 +45,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			</div>
 			<div class="seat_box">
 				<ul id="y_shaft">
+				
 				</ul>
 				<ul id="seats">
 				</ul>
@@ -162,15 +163,19 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 			
 			var url_arr = window.location.href.split('?');
-			var aurl = "<%=basePath%>SelectSeatSvl?" + url_arr[1];
+			//alert(url_arr);
+			//var aurl = "<%=basePath%>selectSeatMovie.do?" + url_arr[1];
+			var aurl = "<%=basePath%>selectSeatMovie.do";
 			$.ajax({
-				type: "get",
+				type: "post",
 				url: aurl,
 				success: function(msg) {
+					alert("sdfdsf");
 					//data处理代码
-					var data = eval("(" + msg + ")");
+					//var data = eval("(" + msg + ")");
+					var data = msg;
 					console.log(data);
-					movie_pic.src =  "<%=basePath%>SelectMoviePicSvl?isbn=" + data.mid;
+					//movie_pic.src =  "<%=basePath%>SelectMoviePicSvl?isbn=" + data.mid;
 					movie_name.innerHTML = data.movie_name;
 					movie_language.innerHTML = data.movie_language;
 					cinema.innerHTML = data.cinema;

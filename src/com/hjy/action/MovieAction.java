@@ -1,5 +1,6 @@
 package com.hjy.action;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -8,10 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.hjy.biz.MovieBiz;
 import com.hjy.entity.TActor;
 import com.hjy.entity.TMovie;
+import com.hjy.entity.TSeat;
+import com.hjy.entity.TSeatAndMovie;
 import com.icss.util.Log;
 
 @Controller
@@ -91,4 +95,18 @@ public class MovieAction {
 		strRet = "main/allFutureMovie.jsp";
 		return strRet;
 	}
+	
+	@RequestMapping("/selectSeatMovie")
+	@ResponseBody
+	public TSeatAndMovie selectSeatMovie(){
+		TSeatAndMovie movie = new TSeatAndMovie();
+		List<TSeat> states  = moviebiz.getSeatsMovie("1");
+		movie.setStates(states);
+		movie.setMovie_name("无双");
+		movie.setMovie_language("英语");
+		movie.setRow("10");
+		movie.setCol("10");
+		return movie;
+	}
+	
 }

@@ -389,8 +389,6 @@ var optionAdd = document.getElementById("optionAdd");
 		     if(r!=null)return  unescape(r[2]); return null;
 		}
 		
-
-	
 		var span = document.getElementById("examinuname");
 		var w,
 			h,

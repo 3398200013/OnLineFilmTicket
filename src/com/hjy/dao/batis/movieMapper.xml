@@ -51,6 +51,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where rw>=1 and rw &lt; 5
 	</select>
 
-
+	<select id="getSeatsMovie" resultType="TSeat">
+		select * from TSEAT where hno=#{hno}
+	</select>
 
 </mapper>

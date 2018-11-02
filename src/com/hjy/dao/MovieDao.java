@@ -10,6 +10,7 @@ import com.hjy.dao.batis.IMovieMapper;
 import com.hjy.entity.TActor;
 import com.hjy.entity.TGrally;
 import com.hjy.entity.TMovie;
+import com.hjy.entity.TSeat;
 
 @Repository("movieDao")
 public class MovieDao{
@@ -100,5 +101,14 @@ public class MovieDao{
 	 */
 	public List<TMovie> getAllFutureMovie() throws Exception{
 		return movieMapper.getAllFutureMovie();
+	}
+	
+	/**
+	 * 查询座位信息
+	 * @param hno
+	 * @return
+	 */
+	public List<TSeat> getSeatsMovie(String hno){
+		return movieMapper.getSeatsMovie(hno);
 	}
 }

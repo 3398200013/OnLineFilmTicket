@@ -14,7 +14,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
           <typeAlias alias="TMovie" type="com.hjy.entity.TMovie"/>
           <typeAlias alias="TGrally" type="com.hjy.entity.TGrally"/>
           <typeAlias alias="TActor" type="com.hjy.entity.TActor"/>
-          
+           <typeAlias alias="TSeat" type="com.hjy.entity.TSeat"/>
 
     </typeAliases>
 
