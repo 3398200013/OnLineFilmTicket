@@ -110,12 +110,12 @@
 			<ul class="select_list select_area_list">
 				<li class="alldistincts area_action">全部区域</li>
 					<li id="area_1">北京</li>
-					<li id="area_2">天就</li>
+					<li id="area_2">天津</li>
 					<li id="area_3">上海</li>
-					<li id="area_4">三星</li>
-					<li id="area_5">买是</li>
-					<li id="area_6">阿萨德</li>
-					<li id="area_7">门脉</li>
+					<li id="area_4">广州</li>
+					<li id="area_5">成都</li>
+					<li id="area_6">重庆</li>
+					<li id="area_7">杭州</li>
 			</ul>
 		</div>
 		
@@ -153,7 +153,30 @@
 		</div>
 
 		<table class="movie_table" border="0px">
-			
+			<tr>
+				<td>放映时间</td>
+				<td>预计结束时间</td>
+				<td>语言版本</td>
+				<td>放映厅</td>
+				<td>价格</td>
+				<td>选座购票</td>
+			</tr>
+			<tr>
+				<td>15:30</td>
+				<td>17:30</td>
+				<td>国语2D</td>
+				<td>4号厅</td>
+				<td>39.10</td>
+				<td><a href="javascript:;" style="padding:10px;padding-left:20px;padding-right:20px; background: red;">选座购票</a></td>
+			</tr>
+			<tr>
+				<td>15:30</td>
+				<td>17:30</td>
+				<td>国语2D</td>
+				<td>4号厅</td>
+				<td>39.10</td>
+				<td><a href="javascript:;" style="padding:10px;padding-left:20px;padding-right:20px; background: red;">选座购票</a></td>
+			</tr>
 		</table>
 		<a href="" id="To_Select_Seat" style="display=none"></a>
 
